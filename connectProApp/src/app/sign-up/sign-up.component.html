@@ -1,3 +1,12 @@
-<p>
-  sign-up works!
-</p>
+<form>
+  <div class="sign-up-form">
+      <div class="input-column">
+          <input class="input inner-light" type="text" placeholder="  First Name" name="fname" required>
+          <input class="input inner-light" type="text" placeholder="  Last Name" name="lname" required>
+          <input class="input inner-light" type="email" placeholder="  Email" name="email" required>
+          <input class="input inner-light" id="pwrd1" type="password" placeholder="  Password" required >
+          <input class="input inner-light" id="pwrd2" type="password" placeholder="  Confirm Password" required>
+          <button class="button inner-light" type="submit" (click)="checkPasswords()">Sign Up</button>
+    </div>
+  </div>
+</form>
