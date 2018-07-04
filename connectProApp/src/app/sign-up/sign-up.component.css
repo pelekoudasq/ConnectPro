@@ -23,6 +23,10 @@
     color: #4A8ADF;
 }
 
+#sign {
+    color: #4A8ADF;
+    font-weight: bold;
+}
 
 form {
     margin: 0px auto;
