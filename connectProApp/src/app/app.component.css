@@ -1,16 +1,1 @@
-ul{
-    padding: 0;
-}
 
-ul li {
-    display: inline;
-    list-style-type: none;
-}
-
-ul li a{
-    text-decoration: none;
-}
-
-a:hover{
-    color: #4A8ADF;
-}
