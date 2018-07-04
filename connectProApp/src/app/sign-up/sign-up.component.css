@@ -37,6 +37,10 @@ form {
 .alert {
     font-size: 15px;
     border: 0 solid black;
+    opacity: 0.8;
+    font-size: 5px;
+    border: 0.1px solid black;
+>>>>>>> 96682c42107f41f35b68e09553aae1b52b0d4cbf
     border-radius: 5px;
     width: 50%;
     margin: 0 auto;
