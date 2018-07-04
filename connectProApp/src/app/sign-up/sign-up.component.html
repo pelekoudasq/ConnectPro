@@ -3,16 +3,22 @@
   <li><a routerLink="../sign-up">Sign Up</a></li>
 </ul>
 <br>
-<form ngNativeValidate>
+<!---<form ngNativeValidate>-->
+<form>
   <div class="sign-up-form">
       <h3 id="sign">Sign Up Now!</h3>
       <div class="input-column">
-          <input class="input inner-light" type="text" placeholder="First Name" name="fname" [(ngModel)]="firstName" required>
-          <input class="input inner-light" type="text" placeholder="Last Name" name="lname" [(ngModel)]="lastName" required>
-          <input class="input inner-light" type="email" placeholder="Email" name="email" [(ngModel)]="emailAddress" required>
-          <input class="input inner-light" name="pwrd1" type="password" placeholder="Password" [(ngModel)]="password" required >
+          <input class="input inner-light" type="text" placeholder="First Name" name="fname" [(ngModel)]="firstName" #first="ngModel" required>
+          <div class="alert" *ngIf="first.touched && !first.valid">First Name Required</div>
+          <input class="input inner-light" type="text" placeholder="Last Name" name="lname" [(ngModel)]="lastName" #last="ngModel" required>
+          <div class="alert" *ngIf="last.touched && !last.valid">Last Name Required</div>
+          <input class="input inner-light" type="email" placeholder="Email" name="email" [(ngModel)]="emailAddress" #email="ngModel" required>
+          <div class="alert" *ngIf="email.touched && !email.valid">Email Address Name Required</div>
+          <input class="input inner-light" name="pwrd1" type="password" placeholder="Password" [(ngModel)]="password" #pass1="ngModel" required >
+          <div class="alert" *ngIf="pass1.touched && !pass1.valid">Password Required</div>
           <!--<br><span>{{ password }}</span> <br>-->
-          <input class="input inner-light" name="pwrd2" type="password" placeholder="Confirm Password" [(ngModel)]="confPassword" required>
+          <input class="input inner-light" name="pwrd2" type="password" placeholder="Confirm Password" [(ngModel)]="confPassword" #pass2="ngModel" required>
+          <div class="alert" *ngIf="pass2.touched && !pass2.valid">Password Confirmation Required</div>
           <!--<br><span>{{ confPassword }}</span> <br>-->
     </div>
     <input class="button" type="submit" (click)="onClick()" value="Submit">
