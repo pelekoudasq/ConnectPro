@@ -1,10 +1,32 @@
+* {
+	box-sizing: border-box;
+}
+
+.nav-bar {
+    padding: 0;
+    align-content: center;
+}
+
+.nav-bar li {
+    display: inline-flex;
+    list-style-type: none;
+    margin: 0 10px;
+}
+
+.nav-bar li a {
+    position: relative;
+    bottom: 10px;
+    text-decoration: none;
+}
+
+.nav-bar a:hover {
+    color: #4A8ADF;
+}
+
 /* Bordered form */
 form {
     border: 0px solid #f1f1f1;
-}
-
-* {
-	box-sizing: border-box;
+    display: inline;
 }
 
 .input, .button {
@@ -22,17 +44,8 @@ button:hover {
     opacity: 0.8;
 }
 
-/* Add padding to containers */
-.login-form {
-    position: relative;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    min-width: 500px;
-    max-width: 700px;
-    height: 45px;
-    margin: 0 0;
+.login {
+    margin: 0 500px;
 }
 
 .input-column {
@@ -42,8 +55,8 @@ button:hover {
 .input {
     float: left;
     width: 45%;
-    margin-right: 7px;
-    padding: 0 10px;
+    margin: 2px;
+    padding: 0 5px;
 }
 
 .button {
@@ -54,6 +67,7 @@ button:hover {
     text-align: center;
     text-decoration: none;
     font-weight: bold;
+    margin: 2px;
 }
 
 .inner-light {
