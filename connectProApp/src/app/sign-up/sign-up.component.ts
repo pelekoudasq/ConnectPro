@@ -7,18 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-    password: any = document.getElementById("pwrd1");
-    confPassword: any = document.getElementById("pwrd2");
+    firstName: string;
+    lastName: string;
+    emailAddress: string;
+    password: string;
+    confPassword: string;
+
     constructor() { }
 
     ngOnInit() {
+        this.firstName = '';
+        this.lastName = '';
+        this.emailAddress = '';
+        this.password = '';
+        this.confPassword = '';
     }
 
     checkPasswords(){
-        if (this.password != this.confPassword){
-            this.confPassword.setCustomValidity("passwords do not match");
+        if (this.password === this.confPassword){
+            console.log('same password', this.confPassword);
+            //this.confPassword.setCustomValidity("passwords do not match");
         } else {
-            this.confPassword.setCustomValidity('');
+            console.log('different password', this.password);
+            this.password = '';
+            this.confPassword = '';
+            //this.confPassword.setCustomValidity('');
         }
     }
 
