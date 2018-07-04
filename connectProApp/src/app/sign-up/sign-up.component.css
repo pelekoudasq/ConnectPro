@@ -1,11 +1,11 @@
 * {
-	display: table;
-    margin: 10px 50px 10px 50px;
+    margin: 10px 50px;
     width: 100%;
 }
 
 form {
-    display: table-cell;
+    margin: 0px auto;
+    width: 50%;
     text-align: center;
     border: 0px solid #f1f1f1;
 }
@@ -27,11 +27,11 @@ button:hover {
 
 /* Add padding to containers */
 .sign-up-form {
-    position: relative;
-    align-self: center;
+    margin: 0 auto;
 }
 
-.input-column {
+.sign-up-form .input-column {
+    margin: 0 auto;
 }
 
 .input {
@@ -52,6 +52,7 @@ button:hover {
 
 .inner-light {
     box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.5);
+    width: 50%;
 }
 
 /* Change styles for span and cancel button on extra small screens */
