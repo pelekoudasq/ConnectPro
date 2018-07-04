@@ -5,6 +5,7 @@
 <br>
 <form action="">
   <div class="sign-up-form">
+      <h3 id="sign">Sign Up Now!</h3>
       <div class="input-column">
           <input class="input inner-light" type="text" placeholder="First Name" name="fname" [(ngModel)]="firstName" required>
           <input class="input inner-light" type="text" placeholder="Last Name" name="lname" [(ngModel)]="lastName" required>
@@ -14,6 +15,6 @@
           <input class="input inner-light" name="pwrd2" type="password" placeholder="Confirm Password" [(ngModel)]="confPassword" required>
           <br><span>{{ confPassword }}</span> <br>
     </div>
-    <button class="button" type="submit" (click)="onClick()">Sign Up</button>
+    <button class="button" type="submit" (click)="onClick()">Submit</button>
   </div>
 </form>
