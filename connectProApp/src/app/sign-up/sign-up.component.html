@@ -1,11 +1,13 @@
 <form>
   <div class="sign-up-form">
       <div class="input-column">
-          <input class="input inner-light" type="text" placeholder="First Name" name="fname" required>
-          <input class="input inner-light" type="text" placeholder="Last Name" name="lname" required>
-          <input class="input inner-light" type="email" placeholder="Email" name="email" required>
-          <input class="input inner-light" id="pwrd1" type="password" placeholder="Password" required >
-          <input class="input inner-light" id="pwrd2" type="password" placeholder="Confirm Password" required>
+          <input class="input inner-light" type="text" placeholder="First Name" name="fname" [(ngModel)]="firstName" required>
+          <input class="input inner-light" type="text" placeholder="Last Name" name="lname" [(ngModel)]="lastName" required>
+          <input class="input inner-light" type="email" placeholder="Email" name="email" [(ngModel)]="emailAddress" required>
+          <input class="input inner-light" name="pwrd1" type="password" placeholder="Password" [(ngModel)]="password" required >
+          <br><span>{{ password }}</span> <br>
+          <input class="input inner-light" name="pwrd2" type="password" placeholder="Confirm Password" [(ngModel)]="confPassword" required>
+          <br><span>{{ confPassword }}</span> <br>
     </div>
     <button class="button" type="submit" (click)="checkPasswords()">Sign Up</button>
   </div>
