@@ -3,6 +3,7 @@
 }
 
 .nav-bar {
+    width: 100%;
     padding: 0;
     align-content: center;
 }
@@ -15,7 +16,7 @@
 
 .nav-bar li a {
     position: relative;
-    bottom: 10px;
+    top: 3px;
     text-decoration: none;
 }
 
@@ -27,6 +28,8 @@
 form {
     border: 0px solid #f1f1f1;
     display: inline;
+    position: relative;
+    float: right;
 }
 
 .input, .button {
@@ -44,8 +47,9 @@ button:hover {
     opacity: 0.8;
 }
 
-.login {
-    margin: 0 500px;
+.login { 
+    float: right;
+
 }
 
 .input-column {
@@ -83,4 +87,5 @@ button:hover {
         display: inline-block;
         float: none;
     }
+
 }
