@@ -9,20 +9,30 @@
       <h3 id="sign">Sign Up Now!</h3>
       <div class="input-column">
           <input class="input inner-light" type="text" placeholder="First Name" name="fname" [(ngModel)]="firstName" #first="ngModel" required>
-          <div class="alert" *ngIf="first.touched && !first.valid">First Name Required</div>
+          <div class="alert" *ngIf="first.touched && !first.valid">
+              <div *ngIf="first.errors.required">First Name required</div>
+          </div>
           <input class="input inner-light" type="text" placeholder="Last Name" name="lname" [(ngModel)]="lastName" #last="ngModel" required>
-          <div class="alert" *ngIf="last.touched && !last.valid">Last Name Required</div>
-          <input class="input inner-light" type="email" placeholder="Email" name="email" [(ngModel)]="emailAddress" #email="ngModel" required>
-          <div class="alert" *ngIf="email.touched && !email.valid">Email Address Name Required</div>
-          <input class="input inner-light" name="pwrd1" type="password" placeholder="Password" [(ngModel)]="password" #pass1="ngModel" required >
-          <div class="alert" *ngIf="pass1.touched && !pass1.valid">Password Required</div>
+          <div class="alert" *ngIf="last.touched && !last.valid">
+              <div *ngIf="last.errors.required">Last Name required</div>
+          </div>
+          <input class="input inner-light" type="email" placeholder="Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="emailAddress" #email="ngModel" required>
+          <div class="alert" *ngIf="email.touched && !email.valid">
+              <div *ngIf="email.errors.required">Email required</div>
+              <div *ngIf="email.errors.pattern && !email.errors.required">Wrong email format</div>
+          </div>
+          <input class="input inner-light" name="pwrd1" type="password" placeholder="Password" pattern=".{8,}" [(ngModel)]="password" #pass1="ngModel" required >
+          <div class="alert" *ngIf="pass1.touched && !pass1.valid">
+              <div *ngIf="pass1.errors.required">Password required</div>
+              <div *ngIf="pass1.errors.pattern && !pass1.errors.required">Password should be at least 8 characters long</div>
+          </div>
           <!--<br><span>{{ password }}</span> <br>-->
           <input class="input inner-light" name="pwrd2" type="password" placeholder="Confirm Password" [(ngModel)]="confPassword" #pass2="ngModel" required>
           <div class="alert" *ngIf="pass2.touched && !pass2.valid">Password Confirmation Required</div>
           <!--<br><span>{{ confPassword }}</span> <br>-->
     </div>
     <input class="button" type="submit" (click)="onClick()" value="Submit">
-    <div *ngIf="userConfirmation == true">
+    <div *ngIf="userConfirmation">
         <h3>Alles Gut</h3>
     </div>
   </div>
