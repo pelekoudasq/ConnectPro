@@ -36,11 +36,15 @@ form {
 
 .alert {
     font-size: 15px;
-    border: 1px solid black;
+    border: 0 solid black;
     border-radius: 5px;
     width: 50%;
     margin: 0 auto;
-    background-color: hsl(0, 65%, 70%);
+    background-color: hsl(0, 70%, 65%);
+}
+
+.alert div{
+    font-size: 15px;
 }
 
 .input, .button {
