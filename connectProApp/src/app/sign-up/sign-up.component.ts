@@ -13,7 +13,7 @@ export class SignUpComponent implements OnInit {
     password: string;
     confPassword: string;
 
-    userConfirmation: boolean = false;
+    userConfirmation: boolean;
 
     constructor() { }
 
@@ -23,6 +23,7 @@ export class SignUpComponent implements OnInit {
         this.emailAddress = '';
         this.password = '';
         this.confPassword = '';
+        this.userConfirmation = false;
     }
 
     checkPasswords(){
@@ -43,6 +44,7 @@ export class SignUpComponent implements OnInit {
         //check email
         if (this.checkPasswords() == true){
             console.log('ok passwords');
+            this.userConfirmation = true;
         } else {
             console.log('try again')
         }

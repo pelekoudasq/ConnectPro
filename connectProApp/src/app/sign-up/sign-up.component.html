@@ -3,7 +3,7 @@
   <li><a routerLink="../sign-up">Sign Up</a></li>
 </ul>
 <br>
-<form action="">
+<form ngNativeValidate>
   <div class="sign-up-form">
       <h3 id="sign">Sign Up Now!</h3>
       <div class="input-column">
@@ -11,10 +11,13 @@
           <input class="input inner-light" type="text" placeholder="Last Name" name="lname" [(ngModel)]="lastName" required>
           <input class="input inner-light" type="email" placeholder="Email" name="email" [(ngModel)]="emailAddress" required>
           <input class="input inner-light" name="pwrd1" type="password" placeholder="Password" [(ngModel)]="password" required >
-          <br><span>{{ password }}</span> <br>
+          <!--<br><span>{{ password }}</span> <br>-->
           <input class="input inner-light" name="pwrd2" type="password" placeholder="Confirm Password" [(ngModel)]="confPassword" required>
-          <br><span>{{ confPassword }}</span> <br>
+          <!--<br><span>{{ confPassword }}</span> <br>-->
     </div>
-    <button class="button" type="submit" (click)="onClick()">Submit</button>
+    <input class="button" type="submit" (click)="onClick()" value="Submit">
+    <div *ngIf="userConfirmation == true">
+        <h3>Alles Gut</h3>
+    </div>
   </div>
 </form>
