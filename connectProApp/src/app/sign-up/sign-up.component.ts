@@ -13,6 +13,8 @@ export class SignUpComponent implements OnInit {
     password: string;
     confPassword: string;
 
+    userConfirmation: boolean = false;
+
     constructor() { }
 
     ngOnInit() {
@@ -26,13 +28,25 @@ export class SignUpComponent implements OnInit {
     checkPasswords(){
         if (this.password === this.confPassword){
             console.log('same password', this.confPassword);
+            return true;
             //this.confPassword.setCustomValidity("passwords do not match");
         } else {
             console.log('different password', this.password);
             this.password = '';
             this.confPassword = '';
+            return false;
             //this.confPassword.setCustomValidity('');
         }
+    }
+
+    onClick(){
+        //check email
+        if (this.checkPasswords() == true){
+            console.log('ok passwords');
+        } else {
+            console.log('try again')
+        }
+
     }
 
 
