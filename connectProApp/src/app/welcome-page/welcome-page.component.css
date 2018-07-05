@@ -47,12 +47,13 @@ button:hover {
     opacity: 0.8;
 }
 
-.login { 
+.login {
     float: right;
 
 }
 
 .input-column {
+	margin-top: 8px;
     margin-right: 95px;
 }
 
