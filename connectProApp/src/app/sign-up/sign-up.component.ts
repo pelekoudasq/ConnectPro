@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,15 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-    firstName: string;
-    lastName: string;
-    emailAddress: string;
-    password: string;
-    confPassword: string;
+
+    rForm: FormGroup;
+    post: any;
+
+    firstName: string = '';
+    lastName: string = '';
+    emailAddress: string = '';
+    password: string = '';
+    confPassword: string = '';
 
     userConfirmation: boolean;
 
-    constructor() { }
+    constructor(private fb: FormBuilder) {
+
+        this.rForm = fb.group({
+            'firstName' : [null, Validators.compose([Validators.required])],
+            'lastName' : [null, Validators.compose([Validators.required])],
+            'emailAddress' : [null, Validators.compose([Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')])],
+            'password' : [null, Validators.compose([Validators.required, Validators.minLength(8)])],
+            'confPassword' : [null, Validators.compose([Validators.required])]
+        });
+
+    }
 
     ngOnInit() {
         this.firstName = '';
@@ -24,6 +40,22 @@ export class SignUpComponent implements OnInit {
         this.password = '';
         this.confPassword = '';
         this.userConfirmation = false;
+    }
+
+    //database
+    addPost(post) {
+        this.firstName = post.firstName;
+        this.lastName = post.lastName;
+        this.emailAddress = post.emailAddress;
+        this.password = post.password;
+        this.confPassword = post.confPassword;
+
+        if (this.checkPasswords() == true){
+            console.log('ok passwords');
+            this.userConfirmation = true;
+        } else {
+            console.log('try again')
+        }
     }
 
     checkPasswords(){

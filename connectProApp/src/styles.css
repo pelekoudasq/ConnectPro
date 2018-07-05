@@ -6,7 +6,3 @@
     font-size: 20px;
     font-family: 'Quicksand', 'Arial';
 }
-
-.input.inner-light.ng-touched.ng-invalid {
-    border: 1px solid red;
-}

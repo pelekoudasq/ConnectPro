@@ -4,36 +4,36 @@
 </ul>
 <br>
 <!---<form ngNativeValidate>-->
-<form>
+<form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
   <div class="sign-up-form">
       <h3 id="sign">Sign Up Now!</h3>
       <div class="input-column">
-          <input class="input inner-light" type="text" placeholder="First Name" name="fname" [(ngModel)]="firstName" #first="ngModel" required>
-          <div class="alert" *ngIf="first.touched && !first.valid">
-              <div *ngIf="first.errors.required">First Name required</div>
+          <input class="input inner-light" type="text" placeholder="First Name" formControlName="firstName">
+          <div class="alert" *ngIf="!rForm.controls['firstName'].valid && rForm.controls['firstName'].touched">
+              First Name required
           </div>
-          <input class="input inner-light" type="text" placeholder="Last Name" name="lname" [(ngModel)]="lastName" #last="ngModel" required>
-          <div class="alert" *ngIf="last.touched && !last.valid">
-              <div *ngIf="last.errors.required">Last Name required</div>
+          <input class="input inner-light" type="text" placeholder="Last Name" formControlName="lastName">
+          <div class="alert" *ngIf="!rForm.controls['lastName'].valid && rForm.controls['lastName'].touched">
+              Last Name required
           </div>
-          <input class="input inner-light" type="email" placeholder="Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="emailAddress" #email="ngModel" required>
-          <div class="alert" *ngIf="email.touched && !email.valid">
-              <div *ngIf="email.errors.required">Email required</div>
-              <div *ngIf="email.errors.pattern && !email.errors.required">Wrong email format</div>
+          <input class="input inner-light" type="email" placeholder="Email" formControlName="emailAddress">
+          <div class="alert" *ngIf="!rForm.controls['emailAddress'].valid && rForm.controls['emailAddress'].touched">
+              <div *ngIf="rForm.controls['emailAddress'].errors.required">Email required</div>
+              <div *ngIf="rForm.controls['emailAddress'].errors.pattern && !rForm.controls['emailAddress'].errors.required">Wrong email format</div>
           </div>
-          <input class="input inner-light" name="pwrd1" type="password" placeholder="Password" pattern=".{8,}" [(ngModel)]="password" #pass1="ngModel" required >
-          <div class="alert" *ngIf="pass1.touched && !pass1.valid">
-              <div *ngIf="pass1.errors.required">Password required</div>
-              <div *ngIf="pass1.errors.pattern && !pass1.errors.required">Password should be at least 8 characters long</div>
+          <input class="input inner-light" type="password" placeholder="Password" formControlName="password">
+          <div class="alert" *ngIf="!rForm.controls['password'].valid && rForm.controls['password'].touched">
+              <div *ngIf="rForm.controls['password'].errors.required">Password required</div>
+              <div *ngIf="!rForm.controls['password'].errors.minLength && !rForm.controls['password'].errors.required">Needs be at least 8 characters long</div>
           </div>
           <!--<br><span>{{ password }}</span> <br>-->
-          <input class="input inner-light" name="pwrd2" type="password" placeholder="Confirm Password" [(ngModel)]="confPassword" #pass2="ngModel" required>
-          <div class="alert" *ngIf="pass2.touched && !pass2.valid">Password Confirmation Required</div>
+          <input class="input inner-light" type="password" placeholder="Confirm Password" formControlName="confPassword">
+          <div class="alert" *ngIf="!rForm.controls['confPassword'].valid && rForm.controls['confPassword'].touched">Password Confirmation Required</div>
           <!--<br><span>{{ confPassword }}</span> <br>-->
     </div>
-    <input class="button" type="submit" (click)="onClick()" value="Submit">
+    <input class="button" type="submit" value="Submit" [disabled]="!rForm.valid">
     <div *ngIf="userConfirmation">
-        <h3>Alles Gut</h3>
+        <h3>Welcome to ConnectPro!</h3>
     </div>
   </div>
 </form>

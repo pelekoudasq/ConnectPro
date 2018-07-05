@@ -35,16 +35,23 @@ form {
 }
 
 .alert {
+    color: #A55064;
     opacity: 0.8;
     font-size: 15px;
     border-radius: 5px;
     width: 50%;
     margin: 0 auto;
-    background-color: hsl(0, 70%, 65%);
+    background-color: #F4CED6;
+    animation: 2s alertAnim forwards;
 }
 
 .alert div{
     font-size: 15px;
+    animation: 2s alertAnim forwards;
+}
+
+.input.inner-light.ng-touched.ng-invalid {
+    border: 1px solid #F4CED6;
 }
 
 .input, .button {
@@ -87,10 +94,25 @@ button:hover {
     margin: 10px auto;
 }
 
+.button:disabled {
+    opacity: 0.4;
+}
+
 .inner-light {
     box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.5);
     width: 50%;
     padding: 0 5px;
+}
+
+@keyframes alertAnim {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 0.8;
+        transform: translateY(0);
+    }
 }
 
 /* Change styles for span and cancel button on extra small screens */
