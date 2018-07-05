@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 *{
+    background-color: rgba(113, 141, 207, 0.7);
     box-sizing: border-box;
     font-size: 20px;
     font-family: 'Quicksand', 'Arial';
