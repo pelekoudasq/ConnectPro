@@ -21,6 +21,7 @@ header ul li {
 header ul li a{
     background-color: transparent;
     color: rgba(152, 172, 219, 0.7);  
+    font-weight: bold;
     position: relative;
     top: 4px;
     text-decoration: none;
@@ -52,12 +53,12 @@ form {
     width: 50%;
     margin: 0 auto;
     background-color: #F4CED6;
-    animation: 2s alertAnim forwards;
+    animation: 1s alertAnim forwards;
 }
 
 .alert div{
     font-size: 15px;
-    animation: 2s alertAnim forwards;
+    animation: 1s alertAnim forwards;
 }
 
 .input.inner-light.ng-touched.ng-invalid {
@@ -72,7 +73,7 @@ form {
     border-bottom-color: #999;
     border-radius: 5px;
     outline: 0;
-    background: #CCCFEA;
+    background-color: #CCCFEA;
 }
 
 /* Add a hover effect for buttons */
