@@ -1,9 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-*{
+html, body{
     background-color: rgba(113, 141, 207, 0.7);
     box-sizing: border-box;
     font-size: 20px;
     font-family: 'Quicksand', 'Arial';
+    margin: 0 auto;
 }
