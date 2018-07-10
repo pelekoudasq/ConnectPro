@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -21,7 +22,7 @@ export class SignUpComponent implements OnInit {
 
     userConfirmation: boolean;
 
-    constructor(private fb: FormBuilder) {
+    constructor(private fb: FormBuilder, private dataService: DataService) {
 
         this.rForm = fb.group({
             'firstName' : [null, Validators.compose([Validators.required])],
@@ -30,6 +31,12 @@ export class SignUpComponent implements OnInit {
             'password' : [null, Validators.compose([Validators.required, Validators.minLength(8)])],
             'confPassword' : [null, Validators.compose([Validators.required])]
         });
+
+
+        this.dataService.getUsers()
+            .subscribe(users => {
+                console.log(users);
+            });
 
     }
 

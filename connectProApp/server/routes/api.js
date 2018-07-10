@@ -1,47 +1,79 @@
 const express = require('express');
 const router = express.Router();
-const MongoClient = require('mongodb').MongoClient;
-const ObjectID = require('mongodb').ObjectID;
-var mydb;
+const mongojs = require('mongojs');
+var db = mongojs('mongodb://tedSofiaGiannis:ted1506@ds231941.mlab.com:31941/connectprodb', ['Users']);
 
-//Connect
-const connection = (closure) => {
-    return MongoClient.connect('mongodb://tedSofiaGiannis:ted1506@ds231941.mlab.com:31941/connectprodb', (err, database) => {
-        mydb = database.db('connectprodb');
-        if (err) return console.log(err);
-
-        closure(database);
+//Get ALL users
+router.get('/users', function(req, res, next){
+    db.Users.find(function(err, users){
+        if(err){
+            res.send(err);
+        }
+        res.json(users);
     });
-};
+});
 
-//Error handling
-const sendError = (err, res) => {
-    response.status = 501;
-    response.message = typeof err == 'object' ? err.message : err;
-    res.status(501).json(response);
-};
-
-//Response handling
-let response = {
-    status: 200,
-    data: [],
-    message: null
-};
-
-//Get users
-router.get('/users', (req, res) =>{
-    connection((database) => {
-        mydb.collection('Users')
-            .find()
-            .toArray()
-            .then((users) => {
-                response.data = users;
-                res.json(response);
-            })
-            .catch((err) => {
-                sendError(err, res);
-            });
+//Get single user
+router.get('/user/:id', function(req, res, next){
+    db.Users.findOne({_id: mongojs.ObjectID(req.params.id)}, function(err, user){
+        if(err){
+            res.send(err);
+        }
+        res.json(user);
     });
+});
+
+//Save a new users
+router.post('/task', function(req, res, next){
+    var user = req.body;
+    if(!user.password){
+        res.status(400);
+        res.json({
+            "error": "Bad data"
+        });
+    } else {
+        db.Users.save(user, function (err, user){
+            if(err){
+                res.send(err);
+            }
+            res.json(user);
+        })
+    }
+});
+
+//Delete single user
+router.delete('/user/:id', function(req, res, next){
+    db.Users.remove({_id: mongojs.ObjectID(req.params.id)}, function(err, user){
+        if(err){
+            res.send(err);
+        }
+        res.json(user);
+    });
+});
+
+//update single users
+router.put('/user/:id', function(req, res, next){
+
+    var user = req.body;
+    var updUser = {};
+
+    if(user.password){
+        updUser.password = user.password;
+    }
+
+    if(!updUser){
+        res.status(400);
+        res.json({
+            "error": "Bad Data"
+        });
+    } else {
+        db.Users.update({_id: mongojs.ObjectID(req.params.id)},updUser, {}, function(err, user){
+            if(err){
+                res.send(err);
+            }
+            res.json(user);
+        });
+    }
 });
 
 module.exports = router;

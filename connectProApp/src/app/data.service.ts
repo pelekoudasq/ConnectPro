@@ -3,17 +3,16 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
+
 export class DataService {
 
-    result:any;
-
-    constructor(private _http: Http) { }
+    constructor(private http: Http) {
+        console.log('Data Service init')
+    }
 
     getUsers() {
-        return this._http.get("./api/users")
-            .map(result => this.result = result.json().data);
+        return this.http.get("http://localhost:3000/api/users")
+            .map(res => res.json());
     }
 }
