@@ -11,19 +11,31 @@ header {
     background-color: #262947;       
 }
 
+header ul{
+    margin: 10px 0;
+    padding: 0;
+    align-content: center;    
+}
+
 header ul li {
     background-color: transparent;    
-    display: inline;
+    display: inline-block;
     list-style-type: none;
     margin: 0 10px;
 }
 
+header ul li img{
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
+
 header ul li a{
     background-color: transparent;
-    color: rgba(152, 172, 219, 0.7);  
+    color: rgba(152, 172, 219, 0.822);  
     font-weight: bold;
     position: relative;
-    top: 4px;
+    bottom: 18px;
     text-decoration: none;
 }
 

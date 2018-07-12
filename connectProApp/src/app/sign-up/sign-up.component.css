@@ -9,11 +9,10 @@ header {
     z-index: 10;
     padding: 0;
     background-color: #262947;  
-    
-     
 }
 
 header ul{
+    margin: 10px 0;
     padding: 0;
     align-content: center;    
 }
@@ -153,7 +152,6 @@ button:hover {
     }
 
     #sign {
-        margin-top: 20%;
-        position: relative;
+        margin-top: 30%;
     }
 }
