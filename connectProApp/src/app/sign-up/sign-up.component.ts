@@ -10,6 +10,7 @@ import { DataService } from '../data.service';
 })
 export class SignUpComponent implements OnInit {
 
+    Users: any[];
 
     rForm: FormGroup;
     post: any;
