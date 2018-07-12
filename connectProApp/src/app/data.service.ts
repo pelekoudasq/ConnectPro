@@ -16,7 +16,5 @@ export class DataService {
             .map(res => res.json());
     }
 
-    addUser() {
-        return this.http.post("http://localhost:3000/api/users")
-    }
+
 }
