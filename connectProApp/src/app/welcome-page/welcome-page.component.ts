@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { User } from '../../user'
 
 @Component({
   selector: 'app-welcome-page',
@@ -7,9 +9,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomePageComponent implements OnInit {
 
-  constructor() { }
+    users: User[];
+    id: string = '5b438d31e7179a31f5317717';
+    email: any;
+    password: any;
 
-  ngOnInit() {
-  }
+    constructor(private dataService: DataService) {
+
+        this.dataService.getUsers()
+            .subscribe(users => {
+                this.users = users;
+            });
+
+        this.dataService.getUser(this.id)
+            .subscribe(users => {
+                console.log(users);
+            });
+    }
+
+    ngOnInit() {
+    }
+
+    findInUsers(){
+        for(var i = 0; i < this.users.length; i++){
+            if( this.users[i].email == this.email && this.users[i].password == this.password){
+                console.log("found");
+                this.id = this.users[i]._id.toString();
+                console.log(this.id);
+                this.dataService.getUser(this.id)
+                    .subscribe(users => {
+                        console.log(users);
+                    });
+                break;
+            }
+        }
+    }
+
+    onClick(){
+        this.email = (<HTMLInputElement>document.getElementById("email")).value;
+        this.password = (<HTMLInputElement>document.getElementById("pswrd")).value;
+        console.log('email', this.email, 'pass', this.password);
+        this.findInUsers();
+    }
 
 }

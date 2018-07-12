@@ -6,10 +6,10 @@
       <form action="action_page.php">
         <div class="login-form">
             <div class="input-column">
-              <input class="input inner-light" type="email" placeholder="Enter Email" name="email" required>
-              <input class="input inner-light" type="password" placeholder="Enter Password" name="psw" required>
+              <input id="email" class="input inner-light" type="email" placeholder="Enter Email" name="email" required>
+              <input id="pswrd" class="input inner-light" type="password" placeholder="Enter Password" name="psw" required>
             </div>
-              <button class="button" type="submit">Login</button>
+              <button class="button" type="submit" (click)="onClick()">Login</button>
         </div>
       </form>
     </li>

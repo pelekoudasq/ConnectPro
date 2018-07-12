@@ -16,5 +16,9 @@ export class DataService {
             .map(res => res.json());
     }
 
+    getUser(id: string) {
+        return this.http.get("http://localhost:3000/api/user/"+id)
+            .map(res => res.json());
+    }
 
 }
