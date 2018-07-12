@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { User } from '../../user'
+import { User } from '../../user';
+import { AppRoutingModule } from '../app-routing.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome-page',
@@ -14,7 +16,7 @@ export class WelcomePageComponent implements OnInit {
     email: any;
     password: any;
 
-    constructor(private dataService: DataService) {
+    constructor(private dataService: DataService, private router: Router) {
 
         this.dataService.getUsers()
             .subscribe(users => {
@@ -30,6 +32,10 @@ export class WelcomePageComponent implements OnInit {
     ngOnInit() {
     }
 
+    found(){
+        this.router.navigate(['login/profile']);
+    }
+
     findInUsers(){
         for(var i = 0; i < this.users.length; i++){
             if( this.users[i].email == this.email && this.users[i].password == this.password){
@@ -40,6 +46,7 @@ export class WelcomePageComponent implements OnInit {
                     .subscribe(users => {
                         console.log(users);
                     });
+                this.found();
                 break;
             }
         }
