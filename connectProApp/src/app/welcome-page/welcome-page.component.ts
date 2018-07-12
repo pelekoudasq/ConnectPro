@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class WelcomePageComponent implements OnInit {
 
     users: User[];
-    id: string = '5b438d31e7179a31f5317717';
+    id: string;
     email: any;
     password: any;
 
@@ -21,11 +21,6 @@ export class WelcomePageComponent implements OnInit {
         this.dataService.getUsers()
             .subscribe(users => {
                 this.users = users;
-            });
-
-        this.dataService.getUser(this.id)
-            .subscribe(users => {
-                console.log(users);
             });
     }
 
