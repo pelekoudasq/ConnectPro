@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 //system module
 const path = require('path');
 const http = require('http');
-const cors = require('cors');
 const app = express();
 
 //Set Port
