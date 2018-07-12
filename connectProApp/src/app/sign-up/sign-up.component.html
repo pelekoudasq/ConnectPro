@@ -1,7 +1,7 @@
 <header>
   <ul>
-  <li><a routerLink="">ConnectPro</a></li>
-  <li><a routerLink="../sign-up">Sign Up</a></li>
+    <li><a routerLink="">ConnectPro</a></li>
+    <li><a routerLink="../sign-up">Sign Up</a></li>
   </ul>
 </header>
 <br>
@@ -16,7 +16,7 @@
           </div>
           <input class="input inner-light" type="text" placeholder="Last Name" formControlName="lastName">
           <div class="alert" *ngIf="!rForm.controls['lastName'].valid && rForm.controls['lastName'].touched">
-              Last Name required
+            Last Name required
           </div>
           <input class="input inner-light" type="email" placeholder="Email" formControlName="emailAddress">
           <div class="alert" *ngIf="!rForm.controls['emailAddress'].valid && rForm.controls['emailAddress'].touched">
