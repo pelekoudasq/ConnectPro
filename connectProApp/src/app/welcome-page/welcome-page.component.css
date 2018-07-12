@@ -9,22 +9,32 @@ header {
     width: 100%;
     z-index: 10;
     padding: 0;
+}
+
+header ul{
+    padding: 0;    
     align-content: center;
 }
 
 header li {
     background-color: transparent;
-    display: inline-flex;
+    display: inline-block;
     list-style-type: none;
     margin: 0 10px;
 }
 
+header ul li img{
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
+
 header li a {
     font-weight: bold;
-    color: rgba(152, 172, 219, 0.7);  
+    color: rgba(152, 172, 219, 0.822);  
     background-color: transparent;
     position: relative;
-    top: 4px;
+    bottom: 18px;
     text-decoration: none;
 }
 
@@ -59,7 +69,8 @@ button:hover {
 
 .login {
     float: right;
-
+    position: relative;
+    top: 5px;
 }
 
 .input-column {
