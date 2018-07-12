@@ -24,7 +24,7 @@ router.get('/user/:id', function(req, res, next){
 });
 
 //Save a new users
-router.post('/task', function(req, res, next){
+router.post('/users', function(req, res, next){
     var user = req.body;
     if(!user.password){
         res.status(400);
