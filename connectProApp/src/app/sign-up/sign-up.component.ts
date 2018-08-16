@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataService } from '../data.service';
+import { User } from '../../user';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,6 +12,7 @@ import { DataService } from '../data.service';
 export class SignUpComponent implements OnInit {
 
     Users: any[];
+
 
     rForm: FormGroup;
     post: any;
@@ -57,12 +59,20 @@ export class SignUpComponent implements OnInit {
         this.emailAddress = post.emailAddress;
         this.password = post.password;
         this.confPassword = post.confPassword;
+        var user = new User();
 
         if (this.checkPasswords() == true){
             console.log('ok passwords');
             this.userConfirmation = true;
+            user.firstName = post.firstName;
+            user.lastName = post.lastName;
+            user.email = post.emailAddress;
+            user.password = post.password;
+            this.dataService.registerUser(user);
+            return true;
         } else {
             console.log('try again')
+            return false;
         }
     }
 
@@ -78,17 +88,6 @@ export class SignUpComponent implements OnInit {
             return false;
             //this.confPassword.setCustomValidity('');
         }
-    }
-
-    onClick(){
-        //check email
-        if (this.checkPasswords() == true){
-            console.log('ok passwords');
-            this.userConfirmation = true;
-        } else {
-            console.log('try again')
-        }
-
     }
 
 
