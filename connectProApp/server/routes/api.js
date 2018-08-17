@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongojs = require('mongojs');
+const bcrypt = require('bcryptjs');
 var db = mongojs('mongodb://tedSofiaGiannis:ted1506@ds231941.mlab.com:31941/connectprodb', ['Users']);
 
 //Get ALL users
@@ -23,22 +24,23 @@ router.get('/user/:id', function(req, res, next){
     });
 });
 
-//Save a new users
-router.post('/users', function(req, res, next){
-    var user = req.body;
-    if(!user.password){
-        res.status(400);
-        res.json({
-            "error": "Bad data"
-        });
-    } else {
-        db.Users.save(user, function (err, user){
-            if(err){
-                res.send(err);
-            }
-            res.json(user);
-        })
+//Save a new user
+router.post('/register', function(req, res, next){
+
+    var userParam = req.body;
+    if (db.Users.findOne({ email: userParam.email })) {
+        throw 'An account with this email already exists';
     }
+
+    const user = new db.Users(userParam);
+
+    // hash password
+    if (userParam.password) {
+        user.hash = bcrypt.hashSync(userParam.password, 10);
+    }
+
+    // save user
+    user.save();
 });
 
 //Delete single user

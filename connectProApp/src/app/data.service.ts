@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { User } from '../user';
 
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -21,4 +22,7 @@ export class DataService {
             .map(res => res.json());
     }
 
+    registerUser(user: User) {
+        return this.http.post("http://localhost:3000/api/register", user);
+    }
 }
