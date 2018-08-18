@@ -30,28 +30,27 @@ router.get('/user/:id', function(req, res, next){
 //Save a new user
 router.post('/register', function(req, res, next){
 
-    //var flag = 0;
+    var flag = 0;
     var userParam = req.body;
     db.Users.findOne({ email: userParam.email }, function(err, user){
         if(user){
             res.send(user);
-        } //else {
-            //flag = 1;
-        //}
-    });
+            console.log('user found '+flag);
+            return;
+        } else {
+            console.log('about to change flag '+flag);
+            flag++;
+            const user = new User(userParam);
 
-    //if (flag === 1){
-        const user = new User(userParam);
+            // hash password
+            if (userParam.password)
+                user.password = bcrypt.hashSync(userParam.password, 10);
 
-        // hash password
-        if (userParam.password) {
-            user.password = bcrypt.hashSync(userParam.password, 10);
+            // save user
+            console.log('user not found '+flag);
+            db.Users.save({firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password});
         }
-
-        // save user
-        db.Users.save({firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password});
-        //res.send(userParam.email);
-    //}
+    });
 });
 
 //Delete single user
