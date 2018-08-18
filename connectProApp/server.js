@@ -7,6 +7,7 @@ const http = require('http');
 const app = express();
 const cors = require('cors');
 
+
 //Set Port
 const port = 3000;
 
@@ -29,7 +30,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/api', api);
 app.use(cors());
 
-app.use(function (req, res, next) {
+/*app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200/');
@@ -46,7 +47,7 @@ app.use(function (req, res, next) {
 
     // Pass to next layer of middleware
     next();
-});
+});*/
 
 app.listen(port, function(){
         console.log('Server started on port'+port);

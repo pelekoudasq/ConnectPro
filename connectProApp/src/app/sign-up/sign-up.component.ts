@@ -68,7 +68,9 @@ export class SignUpComponent implements OnInit {
             user.lastName = post.lastName;
             user.email = post.emailAddress;
             user.password = post.password;
-            this.dataService.registerUser(user);
+            this.dataService.registerUser(user).subscribe(users => {
+                console.log(users);
+            });
             return true;
         } else {
             console.log('try again')
