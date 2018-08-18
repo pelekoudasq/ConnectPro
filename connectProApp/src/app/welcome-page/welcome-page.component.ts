@@ -27,31 +27,25 @@ export class WelcomePageComponent implements OnInit {
     ngOnInit() {
     }
 
-    found(){
+    found(id: string){
+        console.log(id);
         this.router.navigate(['login/profile']);
-    }
-
-    findInUsers(){
-        for(var i = 0; i < this.users.length; i++){
-            if( this.users[i].email == this.email && this.users[i].password == this.password){
-                console.log("found");
-                this.id = this.users[i]._id.toString();
-                console.log(this.id);
-                this.dataService.getUser(this.id)
-                    .subscribe(users => {
-                        console.log(users);
-                    });
-                this.found();
-                break;
-            }
-        }
     }
 
     onClick(){
         this.email = (<HTMLInputElement>document.getElementById("email")).value;
         this.password = (<HTMLInputElement>document.getElementById("pswrd")).value;
         console.log('email', this.email, 'pass', this.password);
-        this.findInUsers();
+        //this.findInUsers();
+        this.dataService.login(this.email, this.password)
+            .subscribe(response => {
+                console.log(response);
+                if (response.status === 200)
+                    //this.id = response.json()._body;
+                    this.id = response["_body"];
+                    this.found(this.id);
+            });
+        //this.found();
     }
 
 }

@@ -17,9 +17,13 @@ export class DataService {
             .map(res => res.json());
     }
 
+    login(email: string, password: string) {
+        return this.http.post("http://localhost:3000/api/login", {email: email, password: password});
+    }
+
     getUser(id: string) {
         return this.http.get("http://localhost:3000/api/user/"+id)
-            .map(res => res.json());
+            .map(res => res.json())
     }
 
     registerUser(user: User) {

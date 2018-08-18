@@ -27,6 +27,27 @@ router.get('/user/:id', function(req, res, next){
     });
 });
 
+router.post('/login', function(req, res, next){
+    var email, password;
+    email = req.body.email;
+    password = req.body.password;
+    db.Users.findOne({ email: email }, function(err, user){
+        if(user){
+            console.log('User with this email found');
+            if (bcrypt.compareSync(password, user.password)){
+                console.log('Correct password');
+                res.status(200).send(user._id);
+            } else {
+                console.log('Wrong password');
+                res.status(400).send('Wrong Password');
+            }
+        } else {
+            console.log('User with this email NOT found');
+            res.status(400).send('Wrong Email');
+        }
+    });
+});
+
 //Save a new user
 router.post('/register', function(req, res, next){
 
