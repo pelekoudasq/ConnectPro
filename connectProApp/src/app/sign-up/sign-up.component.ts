@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataService } from '../data.service';
 import { User } from '../../user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -25,7 +26,7 @@ export class SignUpComponent implements OnInit {
 
     userConfirmation: boolean;
 
-    constructor(private fb: FormBuilder, private dataService: DataService) {
+    constructor(private fb: FormBuilder, private dataService: DataService, , private router: Router) {
 
         this.rForm = fb.group({
             'firstName' : [null, Validators.compose([Validators.required])],
@@ -34,12 +35,6 @@ export class SignUpComponent implements OnInit {
             'password' : [null, Validators.compose([Validators.required, Validators.minLength(8)])],
             'confPassword' : [null, Validators.compose([Validators.required])]
         });
-
-
-        this.dataService.getUsers()
-            .subscribe(users => {
-                console.log(users);
-            });
 
     }
 
@@ -71,7 +66,7 @@ export class SignUpComponent implements OnInit {
             this.dataService.registerUser(user).subscribe(users => {
                 console.log(users);
             });
-            return true;
+            this.router.navigate(['']);
         } else {
             console.log('try again')
             return false;

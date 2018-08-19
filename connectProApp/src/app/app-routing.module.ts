@@ -6,18 +6,9 @@ import { ProfileComponent } from './login/profile/profile.component';
 
 
 const routes: Routes = [
-    {
-        path: '',
-        component: WelcomePageComponent
-    },
-    {
-        path: 'sign-up',
-        component: SignUpComponent
-    },
-    {
-        path:'login/profile',
-        component: ProfileComponent
-    }
+    { path: '', component: WelcomePageComponent, data:{requiresLogin: false} },
+    { path: 'sign-up', component: SignUpComponent, data:{requiresLogin: false} },
+    { path: 'login/profile', component: ProfileComponent, data:{requiresLogin: true} }
 
 ];
 

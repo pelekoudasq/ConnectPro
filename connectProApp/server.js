@@ -1,11 +1,13 @@
 //bring express and body-parser module from node_modules
 const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 //system module
 const path = require('path');
 const http = require('http');
-const app = express();
 const cors = require('cors');
+
+const jwt = require('./server/routes/jwt');
 
 
 //Set Port
@@ -24,11 +26,18 @@ app.use(express.static(path.join(__dirname, 'client')));
 
 //Body Parsers middle ware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+
+app.use(jwt());
 
 //API location
 app.use('/api', api);
-app.use(cors());
+
+app.listen(port, function(){
+    console.log('Server started on port '+port);
+})
+
 
 /*app.use(function (req, res, next) {
 
@@ -48,7 +57,3 @@ app.use(cors());
     // Pass to next layer of middleware
     next();
 });*/
-
-app.listen(port, function(){
-        console.log('Server started on port '+port);
-})

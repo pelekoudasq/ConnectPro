@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../user';
+import { map } from 'rxjs/operators';
 
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -18,7 +19,16 @@ export class DataService {
     }
 
     login(email: string, password: string) {
-        return this.http.post("http://localhost:3000/api/login", {email: email, password: password});
+        return this.http.post("http://localhost:3000/api/login", {email: email, password: password})
+            .pipe(map(user => {
+                // login successful if there's a jwt token in the response
+                if (user && user['token']) {
+                    // store user details and jwt token in local storage to keep user logged in between page refreshes
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                }
+
+                return user;
+            }));
     }
 
     getUser(id: string) {

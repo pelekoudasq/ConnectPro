@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const jwt = require('jsonwebtoken')
+
 const mongojs = require('mongojs');
 const bcrypt = require('bcryptjs');
 const db = mongojs('mongodb://tedSofiaGiannis:ted1506@ds231941.mlab.com:31941/connectprodb', ['Users']);
+const config = require('./config.json');
 
 const User = require('./user.model')
 
@@ -35,15 +38,19 @@ router.post('/login', function(req, res, next){
         if(user){
             console.log('User with this email found');
             if (bcrypt.compareSync(password, user.password)){
+                const token = jwt.sign(user, config.secret); // <==== The all-important "jwt.sign" function
                 console.log('Correct password');
-                res.status(200).send(user._id);
+                res.json({
+                    user,
+                    token
+                });
             } else {
                 console.log('Wrong password');
-                res.status(400).send('Wrong Password');
+                res.status(400).json({ message: 'Password is incorrect' });
             }
         } else {
             console.log('User with this email NOT found');
-            res.status(400).send('Wrong Email');
+            res.status(400).json({ message: 'Email is incorrect' });
         }
     });
 });

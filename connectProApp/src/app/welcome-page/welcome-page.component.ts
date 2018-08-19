@@ -18,10 +18,10 @@ export class WelcomePageComponent implements OnInit {
 
     constructor(private dataService: DataService, private router: Router) {
 
-        this.dataService.getUsers()
+    /*    this.dataService.getUsers()
             .subscribe(users => {
                 this.users = users;
-            });
+            });*/
     }
 
     ngOnInit() {
