@@ -23,10 +23,11 @@ export class DataService {
         return this.http.post("http://localhost:3000/api/login", {email: email, password: password})
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
-                if (user && user['token']) {
+                console.log('dataService: here');
+                if (user) {
                     console.log('dataService: '+user);
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
-                    localStorage.setItem('currentUser', JSON.stringify(user));
+                    localStorage.setItem('currentUser', JSON.stringify(user['_body']));
                 }
                 return user;
             }));
