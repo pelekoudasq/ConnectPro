@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 
 export class DataService {
 
+
     constructor(private http: Http) {
         console.log('Data Service init')
     }
@@ -23,13 +24,18 @@ export class DataService {
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user['token']) {
+                    console.log('dataService: '+user);
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
                 }
-
                 return user;
             }));
     }
+
+    logout() {
+       // remove user from local storage to log user out
+       localStorage.removeItem('currentUser');
+   }
 
     getUser(id: string) {
         return this.http.get("http://localhost:3000/api/user/"+id)

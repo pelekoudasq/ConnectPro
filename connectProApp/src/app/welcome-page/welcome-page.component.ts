@@ -11,17 +11,13 @@ import { Router } from '@angular/router';
 })
 export class WelcomePageComponent implements OnInit {
 
+    currentUser: User;
     users: User[];
-    id: string;
     email: any;
     password: any;
 
     constructor(private dataService: DataService, private router: Router) {
 
-    /*    this.dataService.getUsers()
-            .subscribe(users => {
-                this.users = users;
-            });*/
     }
 
     ngOnInit() {
@@ -29,6 +25,8 @@ export class WelcomePageComponent implements OnInit {
 
     found(id: string){
         console.log(id);
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        console.log(this.currentUser);
         this.router.navigate(['login/profile']);
     }
 
@@ -41,9 +39,7 @@ export class WelcomePageComponent implements OnInit {
             .subscribe(response => {
                 console.log(response);
                 if (response.status === 200)
-                    //this.id = response.json()._body;
-                    this.id = response["_body"];
-                    this.found(this.id);
+                    this.found(response["_body"]);
             });
         //this.found();
     }

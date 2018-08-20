@@ -39,7 +39,7 @@ router.post('/login', function(req, res, next){
             console.log('User with this email found');
             if (bcrypt.compareSync(password, user.password)){
                 const token = jwt.sign(user, config.secret); // <==== The all-important "jwt.sign" function
-                console.log('Correct password');
+                console.log('Correct password '+token+' '+user.firstName+' '+user.lastName);
                 res.json({
                     user,
                     token
