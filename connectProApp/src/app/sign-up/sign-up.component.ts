@@ -26,7 +26,7 @@ export class SignUpComponent implements OnInit {
 
     userConfirmation: boolean;
 
-    constructor(private fb: FormBuilder, private dataService: DataService, , private router: Router) {
+    constructor(private fb: FormBuilder, private dataService: DataService, private router: Router) {
 
         this.rForm = fb.group({
             'firstName' : [null, Validators.compose([Validators.required])],
