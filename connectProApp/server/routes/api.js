@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 
 const mongojs = require('mongojs');
 const bcrypt = require('bcryptjs');
@@ -30,28 +31,33 @@ router.get('/user/:id', function(req, res, next){
     });
 });
 
+async function compareStuff(user, password){
+    if(user){
+        console.log('User with this email found');
+        if (bcrypt.compareSync(password, user.password)){
+            const token = jwt.sign(user, config.secret); // <==== The all-important "jwt.sign" function
+            const userObj = new User(user);
+            const { password, ...userWithoutHash } = userObj.toObject();
+            console.log('Correct password '+token+' '+userObj.firstName+' '+userObj.lastName);
+            console.log(userObj);
+            console.log(userWithoutHash);
+            return {
+                ...userWithoutHash,
+                token
+            };
+        }
+    }
+}
+
 router.post('/login', function(req, res, next){
     var email, password;
+    var userToSend;
     email = req.body.email;
     password = req.body.password;
     db.Users.findOne({ email: email }, function(err, user){
-        if(user){
-            console.log('User with this email found');
-            if (bcrypt.compareSync(password, user.password)){
-                const token = jwt.sign(user, config.secret); // <==== The all-important "jwt.sign" function
-                console.log('Correct password '+token+' '+user.firstName+' '+user.lastName);
-                res.json({
-                    user,
-                    token
-                });
-            } else {
-                console.log('Wrong password');
-                res.status(400).json({ message: 'Password is incorrect' });
-            }
-        } else {
-            console.log('User with this email NOT found');
-            res.status(400).json({ message: 'Email is incorrect' });
-        }
+        compareStuff(user, password)
+            .then(userRes => userRes ? res.json(userRes) : res.status(400).json({ message: 'Username or password is incorrect' }))
+            .catch(err => next(err));
     });
 });
 

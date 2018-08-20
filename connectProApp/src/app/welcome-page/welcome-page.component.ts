@@ -23,10 +23,7 @@ export class WelcomePageComponent implements OnInit {
     ngOnInit() {
     }
 
-    found(id: string){
-        console.log(id);
-        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        console.log(this.currentUser);
+    found(){
         this.router.navigate(['login/profile']);
     }
 
@@ -36,10 +33,9 @@ export class WelcomePageComponent implements OnInit {
         console.log('email', this.email, 'pass', this.password);
         //this.findInUsers();
         this.dataService.login(this.email, this.password)
-            .subscribe(response => {
-                console.log(response);
-                if (response.status === 200)
-                    this.found(response["_body"]);
+            .subscribe(
+                data => {
+                this.found();
             });
         //this.found();
     }
