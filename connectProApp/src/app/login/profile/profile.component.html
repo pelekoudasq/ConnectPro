@@ -12,5 +12,9 @@
 <br>
 <br><br><br><br>
 <body>
-    <p>Hi {{currentUser.firstName}}!</p>
+    <h3>Hi {{currentUser.firstName}} {{currentUser.lastName}}!</h3>
+    <p>here is your email: {{currentUser.email}}</p>
+    <br>
+    <br>
+    <p><a [routerLink]="['']">Logout</a></p>
 </body>

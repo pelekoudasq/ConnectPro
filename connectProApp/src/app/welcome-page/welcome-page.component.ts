@@ -21,6 +21,7 @@ export class WelcomePageComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.dataService.logout();
     }
 
     found(){
@@ -30,7 +31,7 @@ export class WelcomePageComponent implements OnInit {
     onClick(){
         this.email = (<HTMLInputElement>document.getElementById("email")).value;
         this.password = (<HTMLInputElement>document.getElementById("pswrd")).value;
-        console.log('email', this.email, 'pass', this.password);
+        //console.log('email', this.email, 'pass', this.password);
         //this.findInUsers();
         this.dataService.login(this.email, this.password)
             .subscribe(
