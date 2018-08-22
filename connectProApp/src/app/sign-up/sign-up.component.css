@@ -3,6 +3,14 @@
     background-color: transparent;
 }
 
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    padding: 0;
+    background-color: #262947;
+}
+
 header ul{
     margin: 10px 0;
     padding: 0;

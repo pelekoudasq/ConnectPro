@@ -10,3 +10,7 @@ header {
     padding: 0;
     background-color: #262947;
 }
+
+div {
+    margin: 50px 20px;
+}
