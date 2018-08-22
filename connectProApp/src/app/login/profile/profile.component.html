@@ -7,14 +7,13 @@
     <li><a routerLink="../messaging">Messaging</a></li>
     <li><a routerLink="../notifications">Notifications</a></li>
     <li class="active-link"><a routerLink="./">Profile</a></li>
+    <li><a [routerLink]="['']">Logout</a></li>
   </ul>
 </header>
-<br>
-<br><br><br><br>
-<body>
+
+<div class="rest">
     <h3>Hi {{currentUser.firstName}} {{currentUser.lastName}}!</h3>
-    <p>here is your email: {{currentUser.email}}</p>
+    <p>Here is your email: {{currentUser.email}}</p>
     <br>
     <br>
-    <p><a [routerLink]="['']">Logout</a></p>
-</body>
+</div>

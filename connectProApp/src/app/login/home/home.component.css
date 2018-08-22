@@ -11,6 +11,25 @@ header {
     background-color: #262947;
 }
 
+/*////////////////////////////////////////////////////*/
+
 div {
     margin: 50px 20px;
+}
+
+.rest {
+    position: absolute;
+}
+
+.info {
+    background-color: transparent;
+    border: 2px solid #262947;
+    padding: 10px;
+    left: -10px;
+}
+
+.info p {
+    font-weight: bold;
+    font-size: 18px;
+    align-content: center;
 }

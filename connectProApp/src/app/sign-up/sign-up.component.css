@@ -52,6 +52,8 @@ header ul a:hover{
 
 form {
     background-color: transparent;
+    position: absolute;
+    left: 25%;
     margin: 0px auto;
     width: 50%;
     border: 0px solid #f1f1f1;
@@ -106,7 +108,7 @@ button:hover {
 
 .input {
     float: center;
-    width: 100%;
+    width: 60%;
     margin: 10px;
 }
 

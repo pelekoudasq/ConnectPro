@@ -11,6 +11,12 @@ header {
     background-color: #262947;
 }
 
+/*////////////////////////////////////////////////////*/
+
 div {
     margin: 50px 20px;
+}
+
+.rest {
+    position: absolute;
 }
