@@ -1,6 +1,6 @@
 <header>
     <ul class="navigationBar">
-      <li><a routerLink="./"><img src="../../favicon.ico"></a></li>
+      <li><a routerLink="./"><img src="../../../favicon.ico"></a></li>
       <li class="active-link"><a routerLink="./">Home</a></li>
       <li><a routerLink="../network">My Network</a></li>
       <li><a routerLink="../jobs">Jobs</a></li>
@@ -12,10 +12,13 @@
 </header>
 <div class="rest">
     <div class="info">
-
+        <img src="../../../blank-profile-picture.png" alt="profile picture">
         <p>{{currentUser.firstName}} {{currentUser.lastName}}</p>
         <p>email: {{currentUser.email}}</p>
         <p>School: </p>
         <p>Degree: </p>
+    </div>
+    <div class="feed">
+        <p>This is where all news will be displayed</p>
     </div>
 </div>
