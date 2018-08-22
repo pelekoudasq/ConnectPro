@@ -9,13 +9,17 @@ import { AppComponent } from './app.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ProfileComponent } from './login/profile/profile.component';
+import { HomeComponent } from './login/home/home.component';
+import { NetworkComponent } from './login/network/network.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomePageComponent,
     SignUpComponent,
-    ProfileComponent
+    ProfileComponent,
+    HomeComponent,
+    NetworkComponent
   ],
   imports: [
     BrowserModule,

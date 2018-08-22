@@ -1,0 +1,20 @@
+<header>
+    <ul>
+      <li><a routerLink="./"><img src="../../favicon.ico"></a></li>
+      <li class="active-link"><a routerLink="./">Home</a></li>
+      <li><a routerLink="./">My Network</a></li>
+      <li><a routerLink="./">Jobs</a></li>
+      <li><a routerLink="./">Messaging</a></li>
+      <li><a routerLink="./">Notifications</a></li>
+      <li><a routerLink="../profile">Profile</a></li>
+    </ul>
+</header>
+<br>
+<br><br><br><br>
+<body>
+    <h3>{{currentUser.firstName}} {{currentUser.lastName}}!</h3>
+    <p>email: {{currentUser.email}}</p>
+    <br>
+    <br>
+    <p><a [routerLink]="['']">Logout</a></p>
+</body>

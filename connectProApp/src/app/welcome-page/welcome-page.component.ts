@@ -25,7 +25,7 @@ export class WelcomePageComponent implements OnInit {
     }
 
     found(){
-        this.router.navigate(['login/profile']);
+        this.router.navigate(['login/home']);
     }
 
     onClick(){
