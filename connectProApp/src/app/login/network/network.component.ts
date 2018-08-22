@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../../user';
+import { AppRoutingModule } from '../../app-routing.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-network',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NetworkComponent implements OnInit {
 
-  constructor() { }
+    currentUser: User;
+    users: User[] = [];
 
-  ngOnInit() {
-  }
+    constructor(private router: Router) {
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (!this.currentUser){
+            this.router.navigate(['']);
+        }
+    }
+
+    ngOnInit() {
+    }
 
 }

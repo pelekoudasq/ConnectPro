@@ -6,5 +6,64 @@ html, body{
     box-sizing: border-box;
     font-size: 20px;
     font-family: 'Quicksand', 'Arial';
+
+}
+
+body{
     margin: 0 auto;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    padding: 0;
+    background-color: #262947;
+}
+
+.navigationBar{
+    margin: 0px 0;
+    padding: 0;
+    align-content: center;
+}
+
+.navigationBar li {
+    background-color: #262947;
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 13px;
+}
+
+.navigationBar li img{
+    top: 19px;
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
+
+.navigationBar li a{
+    background-color: transparent;
+    color: rgba(152, 172, 219, 0.822);
+    font-weight: normal;
+    position: relative;
+    bottom: 14px;
+    text-decoration: none;
+}
+
+.active-link a{
+    color: #ffff !important;
+    border: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-bottom-color: #fff;
+}
+
+.navigationBar li a:hover{
+    color: #ffff;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+div {
+    margin: 50px 20px;
 }

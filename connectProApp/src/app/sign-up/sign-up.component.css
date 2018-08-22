@@ -1,24 +1,16 @@
 * {
     box-sizing: border-box;
-    background-color: transparent;    
-}
-
-header {
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    padding: 0;
-    background-color: #262947;  
+    background-color: transparent;
 }
 
 header ul{
     margin: 10px 0;
     padding: 0;
-    align-content: center;    
+    align-content: center;
 }
 
 header ul li {
-    background-color: transparent;    
+    background-color: transparent;
     display: inline-block;
     list-style-type: none;
     margin: 0 10px;
@@ -32,7 +24,7 @@ header ul li img{
 
 header ul li a{
     background-color: transparent;
-    color: rgba(152, 172, 219, 0.822);  
+    color: rgba(152, 172, 219, 0.822);
     text-decoration: none;
     font-weight: bold;
     position: relative;
@@ -45,13 +37,13 @@ header ul a:hover{
 
 #sign {
     margin-top: 15%;
-    background-color: transparent;    
+    background-color: transparent;
     color: #262947;
     font-weight: bold;
 }
 
 form {
-    background-color: transparent;    
+    background-color: transparent;
     margin: 0px auto;
     width: 50%;
     border: 0px solid #f1f1f1;
@@ -77,8 +69,8 @@ form {
     border: 1px solid #F4CED6;
 }
 
-.input, .button { 
-    color: #262947; 
+.input, .button {
+    color: #262947;
     font-size: 15px;
     height: 30px;
     border: 1px solid #ccc;
@@ -94,14 +86,14 @@ button:hover {
 }
 
 .sign-up-form {
-    background-color: transparent;    
+    background-color: transparent;
     margin: 0 auto;
     text-align: center;
 }
 
 .sign-up-form .input-column {
     margin: 0 auto;
-    background-color: transparent;    
+    background-color: transparent;
 }
 
 .input {
@@ -110,7 +102,7 @@ button:hover {
     margin: 10px;
 }
 
-.button {    
+.button {
     width: 20%;
     color: #5d534d;
     line-height: 25px;

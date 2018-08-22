@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ProfileComponent } from './login/profile/profile.component';
-import {HomeComponent } from './login/home/home.component';
+import { HomeComponent } from './login/home/home.component';
+import { NetworkComponent } from './login/network/network.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
     { path: 'sign-up', component: SignUpComponent, data:{requiresLogin: false} },
     { path: 'login/profile', component: ProfileComponent, data:{requiresLogin: true} },
     { path: 'login/home', component: HomeComponent, data:{requiresLogin: true} }
+    { path: 'login/network', component: NetworkComponent, data:{requiresLogin: true} }
 
 ];
 
