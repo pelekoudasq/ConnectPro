@@ -4,47 +4,49 @@
 }
 
 header {
-    background-color: #262947;   
     position: fixed;
     width: 100%;
     z-index: 10;
     padding: 0;
+    background-color: #262947;
 }
 
 header ul{
-    margin: 10px 0;
-    padding: 0;    
+    margin: 0px 0;
+    padding: 0;
     align-content: center;
 }
 
-header li {
+header ul li {
     background-color: transparent;
     display: inline-block;
     list-style-type: none;
-    margin: 0 10px;
+    margin: 0 13px;
 }
 
 header ul li img{
+    top: 5px;
     width: 48px;
     height: 48px;
     position: relative;
 }
 
 header li a {
-    font-weight: bold;
-    color: rgba(152, 172, 219, 0.822);  
+    font-weight: normal;
+    color: rgba(152, 172, 219, 0.822);
     background-color: transparent;
     position: relative;
-    bottom: 18px;
+    bottom: 14px;
     text-decoration: none;
 }
 
-header a:hover {
-    color: #4A8ADF;
+header ul li a:hover{
+    color: #ffff;
 }
 
 /* Bordered form */
 form {
+    top: 5px;
     background-color: transparent;
     border: 0px solid #f1f1f1;
     display: inline;
@@ -53,9 +55,9 @@ form {
 }
 
 .input, .button {
-    color: #262947;  
+    color: #262947;
     font-size: 15px;
-    height: 30px;
+    height: 28px;
     border: 1px solid #ccc;
     border-bottom-color: #999;
     border-radius: 5px;
@@ -66,6 +68,7 @@ form {
 /* Add a hover effect for buttons */
 button:hover {
     opacity: 0.8;
+    cursor: pointer;
 }
 
 .login {
@@ -89,7 +92,7 @@ button:hover {
 .button {
     float: left;
     width: 95px;
-    color: #262947;  
+    color: #262947;
     line-height: 25px;
     text-align: center;
     text-decoration: none;

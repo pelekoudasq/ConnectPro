@@ -12,19 +12,20 @@ header {
 }
 
 header ul{
-    margin: 10px 0;
+    margin: 0px 0;
     padding: 0;
     align-content: center;
 }
 
 header ul li {
-    background-color: transparent;
+    background-color: #262947;
     display: inline-block;
     list-style-type: none;
-    margin: 0 10px;
+    margin: 0 13px;
 }
 
 header ul li img{
+    top: 19px;
     width: 48px;
     height: 48px;
     position: relative;
@@ -33,12 +34,22 @@ header ul li img{
 header ul li a{
     background-color: transparent;
     color: rgba(152, 172, 219, 0.822);
-    font-weight: bold;
+    font-weight: normal;
     position: relative;
-    bottom: 18px;
+    bottom: 14px;
     text-decoration: none;
 }
 
-header ul a:hover{
-    color: #4A8ADF;
+.active-link a{
+    color: #ffff !important;
+    border: solid;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-bottom-color: #fff;
+}
+
+header ul li a:hover{
+    color: #ffff;
+    opacity: 0.8;
+    cursor: pointer;
 }
