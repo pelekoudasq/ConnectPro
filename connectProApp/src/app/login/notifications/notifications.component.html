@@ -1,20 +1,18 @@
 <header>
     <ul class="navigationBar">
-      <li><a routerLink="./"><img src="../../favicon.ico"></a></li>
-      <li class="active-link"><a routerLink="./">Home</a></li>
+      <li><a routerLink="../home"><img src="../../favicon.ico"></a></li>
+      <li><a routerLink="../home">Home</a></li>
       <li><a routerLink="../network">My Network</a></li>
       <li><a routerLink="../jobs">Jobs</a></li>
       <li><a routerLink="../messaging">Messaging</a></li>
-      <li><a routerLink="../notifications">Notifications</a></li>
+      <li class="active-link"><a routerLink="./">Notifications</a></li>
       <li><a routerLink="../profile">Profile</a></li>
     </ul>
 </header>
 <br>
 <div>
 
-    <h3>{{currentUser.firstName}} {{currentUser.lastName}}!</h3>
-    <p>email: {{currentUser.email}}</p>
-    <br>
-    <br>
+    <h3>Notifications:</h3>
+
     <p><a [routerLink]="['']">Logout</a></p>
 </div>

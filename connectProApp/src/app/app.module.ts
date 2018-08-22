@@ -11,6 +11,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { ProfileComponent } from './login/profile/profile.component';
 import { HomeComponent } from './login/home/home.component';
 import { NetworkComponent } from './login/network/network.component';
+import { JobsComponent } from './login/jobs/jobs.component';
+import { MessagingComponent } from './login/messaging/messaging.component';
+import { NotificationsComponent } from './login/notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { NetworkComponent } from './login/network/network.component';
     SignUpComponent,
     ProfileComponent,
     HomeComponent,
-    NetworkComponent
+    NetworkComponent,
+    JobsComponent,
+    MessagingComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
