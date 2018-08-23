@@ -19,4 +19,10 @@ div {
 
 .rest {
     position: absolute;
+    background-color: rgba(214, 222, 241, 0.7);
+    border: 1px solid #262947;
+    padding: 10px;
+    left: 8%;
+    width: 80%;
+    height: 100%;
 }
