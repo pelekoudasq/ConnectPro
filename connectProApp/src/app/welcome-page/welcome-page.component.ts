@@ -15,6 +15,8 @@ export class WelcomePageComponent implements OnInit {
     users: User[];
     email: any;
     password: any;
+    dbError: boolean;
+    
 
     constructor(private dataService: DataService, private router: Router) {
 
@@ -31,14 +33,14 @@ export class WelcomePageComponent implements OnInit {
     onClick(){
         this.email = (<HTMLInputElement>document.getElementById("email")).value;
         this.password = (<HTMLInputElement>document.getElementById("pswrd")).value;
-        //console.log('email', this.email, 'pass', this.password);
-        //this.findInUsers();
         this.dataService.login(this.email, this.password)
             .subscribe(
                 data => {
                 this.found();
+            },
+            error =>{
+
             });
-        //this.found();
     }
 
 }

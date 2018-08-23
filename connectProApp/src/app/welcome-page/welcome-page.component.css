@@ -44,11 +44,20 @@ header ul li a:hover{
     color: #ffff;
 }
 
+.error-message {
+    font-weight: normal;
+    color: red;
+    background-color: transparent;
+    position: relative;
+    float: right;
+    bottom: 14px;
+    text-decoration: none;
+}
+
 /* Bordered form */
 form {
     top: 5px;
     background-color: transparent;
-    border: 0px solid #f1f1f1;
     display: inline;
     position: relative;
     float: right;
