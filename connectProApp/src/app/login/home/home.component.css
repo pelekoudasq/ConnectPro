@@ -19,13 +19,14 @@ div {
 
 .rest {
     position: absolute;
-    width: 100%;
+    left: 8%;
+    width: 80%;
     height: 100%;
-    padding: 20px;
+    
 }
 
 .rest div {
-    margin: 10px 15px;
+    margin: 10px 20px;
 }
 
 .info {
@@ -34,8 +35,7 @@ div {
     border: 1px solid #262947;
     padding: 10px;
     float: left;
-    left: -5px;
-    width: 30%;
+    width: 20%;
 }
 
 .info p {
@@ -44,12 +44,21 @@ div {
     align-content: center;
 }
 
+.profile-pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border-radius: 50%;
+    border: 1px solid #262947;
+}
+
 .feed {
     background-color: rgba(214, 222, 241, 0.7);
     border: 1px solid #262947;
     padding: 10px;
     float: right;
     right: 30px;
-    width: 68%;
+    width: 65%;
     height: 100%;
 }

@@ -11,11 +11,19 @@ header {
     background-color: #262947;
 }
 
+/*////////////////////////////////////////////////////*/
+
 div {
     margin: 50px 20px;
 }
 
 .rest {
     position: absolute;
-    top: 5%;
+    background-color: rgba(214, 222, 241, 0.7);
+    border: 1px solid #262947;
+    padding: 10px;
+    left: 8%;
+    width: 80%;
+    height: 100%;
+    top: 4%;
 }
