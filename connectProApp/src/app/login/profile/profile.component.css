@@ -27,3 +27,17 @@ div {
     height: 100%;
     top: 4%;
 }
+
+.profile-pic {
+    display: block;
+    
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    border-radius: 50%;
+    border: 1px solid #262947;
+}
+
+.info {
+    text-align: center;
+}
