@@ -7,7 +7,7 @@
       <li><a routerLink="../messaging">Messaging</a></li>
       <li><a routerLink="../notifications">Notifications</a></li>
       <li><a routerLink="../profile">Profile</a></li>
-      <li><a [routerLink]="['']">Logout</a></li>
+      <li id="logout"><a [routerLink]="['']">Logout</a></li>
     </ul>
 </header>
 <div class="rest">
@@ -18,7 +18,13 @@
         <p>School: </p>
         <p>Degree: </p>
     </div>
-    <div class="feed">
-        <p>This is where all news will be displayed</p>
+    <div class="page">
+        <form class="user-post">
+            <input type="text" placeholder="Write a post!">
+            <button class="button" type="submit" (click)="onClick()">Post</button>
+        </form>
+        <div class="feed">
+            <p>This is where all news will be displayed</p>
+        </div>
     </div>
 </div>
