@@ -8,8 +8,8 @@
       <form action="action_page.php">
         <div class="login-form">
             <div class="input-column">
-              <input id="email" class="input inner-light" type="email" placeholder="Enter Email" name="email" required>
-              <input id="pswrd" class="input inner-light" type="password" placeholder="Enter Password" name="psw" required>
+              <input [(ngModel)]="email" class="input inner-light" type="email" placeholder="Enter Email" name="name" required>
+              <input [(ngModel)]="password" class="input inner-light" type="password" placeholder="Enter Password" name="password" required>
             </div>
               <button class="button" type="submit" (click)="onClick()">Login</button>
         </div>

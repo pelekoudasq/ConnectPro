@@ -28,6 +28,8 @@ export class WelcomePageComponent implements OnInit {
     }
 
     dbErrorFound(){
+        this.email = '';
+        this.password = '';
         this.dbError = true;
     }
 
@@ -36,8 +38,9 @@ export class WelcomePageComponent implements OnInit {
     }
 
     onClick(){
-        this.email = (<HTMLInputElement>document.getElementById("email")).value;
-        this.password = (<HTMLInputElement>document.getElementById("pswrd")).value;
+        //this.email = (<HTMLInputElement>document.getElementById("email")).value;
+        //this.password = (<HTMLInputElement>document.getElementById("pswrd")).value;
+        console.log(this.email+' '+this.password);
         this.dataService.login(this.email, this.password)
             .subscribe(
                 data => {
