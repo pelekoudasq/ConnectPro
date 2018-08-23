@@ -35,7 +35,7 @@ async function compareStuff(user, password){
     if(user){
         console.log('User with this email found');
         if (bcrypt.compareSync(password, user.password)){
-            const token = jwt.sign(user, config.secret); // <==== The all-important "jwt.sign" function
+            const token = jwt.sign({ sub: user.id }, config.secret); // <==== The all-important "jwt.sign" function
             const userObj = new User(user);
             const { password, ...userWithoutHash } = userObj.toObject();
             console.log('Correct password '+token+' '+userObj.firstName+' '+userObj.lastName);
@@ -90,6 +90,7 @@ router.post('/register', function(req, res, next){
 //User posts
 
 router.post('/newPost/:id', function(req, res, next){
+    console.log("IM here");
     db.Posts.insertOne(
         {user: req.params.id, content: req.body, likes: 0}
     )

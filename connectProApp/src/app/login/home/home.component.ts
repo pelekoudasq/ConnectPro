@@ -27,11 +27,11 @@ export class HomeComponent implements OnInit {
     }
 
     onClick(){
-        this.dataService.addPost(this.currentUser.id, content)
+        this.dataService.addPost(this.currentUser._id, this.content)
             .subscribe(
                 data => {
                     this.content = '';
-                };
+                });
     }
 
 }
