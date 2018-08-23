@@ -55,7 +55,7 @@ header ul li a:hover{
     background-color: #F4CED6;
     animation: 0.7s alertAnim forwards;
     width: 20%;
-    right: 15%;
+    right: 200px;
 }
 
 /* Bordered form */
