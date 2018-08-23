@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 const mongojs = require('mongojs');
 const bcrypt = require('bcryptjs');
-const db = mongojs('mongodb://tedSofiaGiannis:ted1506@ds231941.mlab.com:31941/connectprodb', ['Users']);
+const db = mongojs('mongodb://tedSofiaGiannis:ted1506@ds231941.mlab.com:31941/connectprodb');
 const config = require('./config.json');
 
 const User = require('./user.model')
@@ -87,6 +87,15 @@ router.post('/register', function(req, res, next){
     });
 });
 
+//User posts
+
+router.post('/newPost/:id', function(req, res, next){
+    db.Posts.insertOne(
+        {user: req.params.id, content: req.body, likes: 0}
+    )
+});
+
+/*
 //Delete single user
 router.delete('/user/:id', function(req, res, next){
     db.Users.remove({_id: mongojs.ObjectID(req.params.id)}, function(err, user){
@@ -120,6 +129,6 @@ router.put('/user/:id', function(req, res, next){
             res.json(user);
         });
     }
-});
+});*/
 
 module.exports = router;

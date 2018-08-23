@@ -46,4 +46,8 @@ export class DataService {
     registerUser(user: User) {
         return this.http.post("http://localhost:3000/api/register", user);
     }
+
+    addPost(userId: number, content: string) {
+        return this.http.post("http://localhost:3000/api/register/newPost/"+userId, content);
+    }
 }
