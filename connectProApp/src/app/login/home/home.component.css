@@ -26,7 +26,7 @@ div {
 }
 
 .rest div {
-    margin: 10px 20px;
+    margin: 20px 20px;
 }
 
 .info {
@@ -74,5 +74,52 @@ div {
     background-color: rgba(214, 222, 241, 0.7);
     border: 1px solid #262947;
     padding: 10px;
-    margin: 10px 20px;
+    margin: 0px 20px;
 }
+
+.user-post p {
+    margin: 0 10px;
+}
+
+.additional .inner-light {
+    overflow: hidden;
+    display: inline-block;
+    width: 25%;
+    font-size: 12px;
+}
+
+input, .button{
+    color: #262947;
+    font-size: 15px;
+    height: 30px;
+    border: 1px solid #262947;
+    border-bottom-color: #999;
+    border-radius: 5px;
+    background-color: #CCCFEA;
+    display: block;
+    position: relative;
+    
+}
+
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+button {
+    left: 40%;
+    width:15%;
+}
+
+input {
+    width: 80%;
+    margin: 10px;
+    left: 8%;
+}
+
+.inner-light {
+    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.5);
+    padding: 0 5px;
+}
+
+

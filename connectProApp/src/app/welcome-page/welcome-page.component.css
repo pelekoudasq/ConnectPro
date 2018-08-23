@@ -62,11 +62,11 @@ header ul li a:hover{
 form {
     top: 5px;
     background-color: transparent;
-    display: inline;
+    display: inline-block;
     position: relative;
 }
 
-.input, .button {
+input, .button {
     color: #262947;
     font-size: 15px;
     height: 28px;
