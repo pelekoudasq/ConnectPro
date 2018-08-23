@@ -12,7 +12,7 @@ header {
 }
 
 header ul{
-    margin: 0px 0;
+    margin: 0;
     padding: 0;
     align-content: center;
 }
@@ -32,7 +32,6 @@ header ul li img{
 }
 
 header li a {
-    font-weight: normal;
     color: rgba(152, 172, 219, 0.822);
     background-color: transparent;
     position: relative;
@@ -45,14 +44,18 @@ header ul li a:hover{
 }
 
 .error-message {
+    padding: 2px 0px; 
+    text-align: center;
+    position: relative;
+    float: right;
     font-size: 15px;
     font-weight: normal;
-    color: red;
-    background-color: transparent;
-    position: relative;
-    left: 100%;
-    bottom: 14px;
-    text-decoration: none;
+    color: #A55064;
+    border-radius: 5px;
+    background-color: #F4CED6;
+    animation: 0.7s alertAnim forwards;
+    width: 20%;
+    right: 15%;
 }
 
 /* Bordered form */
@@ -111,6 +114,17 @@ button:hover {
 
 .inner-light {
 	box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes alertAnim {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 0.8;
+        transform: translateY(0);
+    }
 }
 
 /* Change styles for span and cancel button on extra small screens */
