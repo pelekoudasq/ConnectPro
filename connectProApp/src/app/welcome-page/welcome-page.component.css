@@ -45,11 +45,12 @@ header ul li a:hover{
 }
 
 .error-message {
+    font-size: 15px;
     font-weight: normal;
     color: red;
     background-color: transparent;
     position: relative;
-    float: right;
+    left: 100%;
     bottom: 14px;
     text-decoration: none;
 }
@@ -60,7 +61,6 @@ form {
     background-color: transparent;
     display: inline;
     position: relative;
-    float: right;
 }
 
 .input, .button {
