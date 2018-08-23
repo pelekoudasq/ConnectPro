@@ -38,6 +38,12 @@ html, body{
     text-decoration: none;
 }
 
+#logout {
+    float: right;
+    text-align: center;
+    margin-top: 28px;
+}
+
 .active-link a{
     color: #ffff !important;
     border: solid;
