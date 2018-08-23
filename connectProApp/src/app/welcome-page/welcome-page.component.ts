@@ -16,14 +16,19 @@ export class WelcomePageComponent implements OnInit {
     email: any;
     password: any;
     dbError: boolean;
-    
+
 
     constructor(private dataService: DataService, private router: Router) {
 
     }
 
     ngOnInit() {
+        this.dbError = false;
         this.dataService.logout();
+    }
+
+    dbErrorFound(){
+        this.dbError = true;
     }
 
     found(){
@@ -36,11 +41,11 @@ export class WelcomePageComponent implements OnInit {
         this.dataService.login(this.email, this.password)
             .subscribe(
                 data => {
-                this.found();
-            },
-            error =>{
-
-            });
+                    this.found();
+                },
+                error =>{
+                    this.dbErrorFound();
+                });
     }
 
 }
