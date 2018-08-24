@@ -24,7 +24,7 @@ function jwt() {
 }
 
 async function isRevoked(req, payload, done) {
-    const user = await db.Users.findById(payload.sub).select('-password');
+    const user = await db.Users.findById(payload.sub).select('-_id');
 
     // revoke token if user no longer exists
     if (!user) {
