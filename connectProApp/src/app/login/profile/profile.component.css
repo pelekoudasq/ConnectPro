@@ -8,7 +8,7 @@ header {
     width: 100%;
     z-index: 10;
     padding: 0;
-    background-color: #262947;
+    background-color: #353961;
 }
 
 /*////////////////////////////////////////////////////*/
@@ -20,7 +20,7 @@ div {
 .rest {
     position: absolute;
     background-color: rgba(214, 222, 241, 0.7);
-    border: 1px solid #262947;
+    border: 1px solid #353961;
     padding: 10px;
     left: 8%;
     width: 80%;
@@ -35,7 +35,7 @@ div {
     margin-right: auto;
     width: 10%;
     border-radius: 50%;
-    border: 1px solid #262947;
+    border: 1px solid #353961;
 }
 
 .info {

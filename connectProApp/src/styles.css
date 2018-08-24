@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 html, body{
-    background-color: rgba(113, 141, 207, 0.7);
+    background-color: rgba(214, 222, 241, 0.7);
     box-sizing: border-box;
     font-size: 20px;
     font-family: 'Quicksand', 'Arial';
@@ -16,7 +16,7 @@ html, body{
 }
 
 .navigationBar li {
-    background-color: #262947;
+    background-color: #353961;
     display: inline-block;
     list-style-type: none;
     margin: 0 13px;
@@ -31,7 +31,7 @@ html, body{
 
 .navigationBar li a{
     background-color: transparent;
-    color: rgba(152, 172, 219, 0.822);
+    color: rgba(214, 222, 241, 0.7);
     font-weight: normal;
     position: relative;
     bottom: 14px;

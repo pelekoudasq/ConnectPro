@@ -8,7 +8,7 @@ header {
     width: 100%;
     z-index: 10;
     padding: 0;
-    background-color: #262947;
+    background-color: #353961;
 }
 
 header ul{
@@ -46,7 +46,7 @@ header ul li a:hover{
 #sign {
     margin-top: 15%;
     background-color: transparent;
-    color: #262947;
+    color: #353961;
     font-weight: bold;
 }
 
@@ -80,14 +80,12 @@ form {
 }
 
 .input, .button {
-    color: #262947;
     font-size: 15px;
     height: 30px;
     border: 1px solid #ccc;
     border-bottom-color: #999;
     border-radius: 5px;
     outline: 0;
-    background-color: #CCCFEA;
 }
 
 /* Add a hover effect for buttons */
@@ -108,14 +106,18 @@ button:hover {
 }
 
 .input {
+    color: #353961;
+    background-color: white;
     float: center;
-    width: 60%;
     margin: 10px;
+    width: 50%;
+    padding: 0 5px;
 }
 
 .button {
     width: 20%;
-    color: #5d534d;
+    color: rgba(214, 222, 241, 0.7);
+    background-color: #353961;
     line-height: 25px;
     text-align: center;
     text-decoration: none;
@@ -125,12 +127,6 @@ button:hover {
 
 .button:disabled {
     opacity: 0.4;
-}
-
-.inner-light {
-    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.5);
-    width: 50%;
-    padding: 0 5px;
 }
 
 @keyframes alertAnim {

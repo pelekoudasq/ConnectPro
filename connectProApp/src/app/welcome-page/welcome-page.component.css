@@ -8,7 +8,7 @@ header {
     width: 100%;
     z-index: 10;
     padding: 0;
-    background-color: #262947;
+    background-color: #353961;
 }
 
 header ul{
@@ -67,14 +67,13 @@ form {
 }
 
 input, .button {
-    color: #262947;
+    color: #353961;
     font-size: 15px;
     height: 28px;
     border: 1px solid #ccc;
     border-bottom-color: #999;
     border-radius: 5px;
-    outline: 0;
-    background: #CCCFEA;
+    background: white;
 }
 
 /* Add a hover effect for buttons */
@@ -104,16 +103,12 @@ button:hover {
 .button {
     float: left;
     width: 95px;
-    color: #262947;
+    color: #353961;
     line-height: 25px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     margin: 2px;
-}
-
-.inner-light {
-	box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.5);
 }
 
 @keyframes alertAnim {

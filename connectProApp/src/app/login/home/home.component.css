@@ -8,7 +8,7 @@ header {
     width: 100%;
     z-index: 10;
     padding: 0;
-    background-color: #262947;
+    background-color: #353961;
 }
 
 /*////////////////////////////////////////////////////*/
@@ -30,9 +30,7 @@ div {
 }
 
 .info {
-    background-color: rgba(214, 222, 241, 0.7);
     position: fixed;
-    border: 1px solid #262947;
     padding: 10px;
     float: left;
     width: 20%;
@@ -50,7 +48,7 @@ div {
     margin-right: auto;
     width: 40%;
     border-radius: 50%;
-    border: 1px solid #262947;
+    border: 1px solid #353961;
 }
 
 .page {
@@ -62,9 +60,15 @@ div {
     width: 65%;
 }
 
+.coloring {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-color: #999;
+    border-right-color: #999;
+}
+
 .user-post {
-    background-color: rgba(214, 222, 241, 0.7);
-    border: 1px solid #262947;
     padding: 10px;
     margin: 0 20px;
 }
@@ -94,13 +98,10 @@ div {
 }
 
 input, .button{
-    color: #262947;
     font-size: 15px;
     height: 30px;
-    border: 1px solid #262947;
+    border: 1px solid #ccc;
     border-bottom-color: #999;
-    border-radius: 5px;
-    background-color: #CCCFEA;
     display: block;
     position: relative;
     
@@ -112,15 +113,19 @@ button:hover {
 }
 
 button {
+    color: rgba(214, 222, 241, 0.7);
     left: 40%;
     width:15%;
     margin-top: 10px;
+    background-color: #353961;
 }
 
 input {
     width: 80%;
     margin: 10px;
     left: 8%;
+    color: #353961;
+    background-color: white;
 }
 
 .inner-light {
@@ -132,8 +137,6 @@ input {
             news feed
 //////////////////////////////////*/
 .feed {
-    background-color: rgba(214, 222, 241, 0.7);
-    border: 1px solid #262947;
     padding: 10px;
     height: 100%;
     
