@@ -15,15 +15,6 @@ const port = 3000;
 //API file for interacting with mongoDB
 const api = require('./server/routes/api');
 
-//View engine
-/*app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-app.engine('html', require('ejs').renderFile);
-
-//Set Static Folder (client) //Angulat DISt output folder
-app.use(express.static(path.join(__dirname, 'client')));
-*/
-
 
 //Body Parsers middle ware
 app.use(bodyParser.urlencoded({ extended: false }));

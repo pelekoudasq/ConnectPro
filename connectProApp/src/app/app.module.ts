@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './jwt-interceptor';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http'
@@ -16,7 +17,6 @@ import { JobsComponent } from './login/jobs/jobs.component';
 import { MessagingComponent } from './login/messaging/messaging.component';
 import { NotificationsComponent } from './login/notifications/notifications.component';
 
-import { JwtInterceptor } from './jwt-interceptor';
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import { JwtInterceptor } from './jwt-interceptor';
     NotificationsComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
