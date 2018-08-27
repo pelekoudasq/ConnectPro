@@ -16,8 +16,9 @@ function jwt() {
     });
 }
 
-function isRevoked(req, payload, done) {
-    const user = services.getById(payload.sub);
+async function isRevoked(req, payload, done) {
+    console.log(payload+ ' '+ payload.sub);
+    const user = await services.getById(payload.sub);
 
     // revoke token if user no longer exists
     if (!user) {

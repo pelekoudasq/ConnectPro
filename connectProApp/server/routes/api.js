@@ -31,8 +31,16 @@ router.get('/user/:id', function(req, res, next){
     });
 });
 
-function getById(id) {
-    return db.Users.findById(id).select('-password');
+async function getById(id) {
+    console.log(id);
+    await db.Users.findOne({_id: id}, function(err, user){
+            if(user){
+                console.log('getById: user found');
+                return user;
+            }
+            console.log('getById: USER NOT FOUND ' + err);
+            return null;
+    });
 }
 
 async function compareStuff(user, password){
@@ -42,7 +50,8 @@ async function compareStuff(user, password){
             const token = jwt.sign({ sub: user.id }, config.secret); // <==== The all-important "jwt.sign" function
             const userObj = new User(user);
             const { password, ...userWithoutHash } = userObj.toObject();
-            console.log('Correct password '+token+' '+userObj.firstName+' '+userObj.lastName);
+            console.log('Correct password ' );
+            console.log('TOKEN: '+token);
             console.log(userObj);
             console.log(userWithoutHash);
             return {
@@ -100,5 +109,7 @@ router.post('/newPost/:id', function(req, res, next){
     )
 });
 
-module.exports = router;
-module.exports = getById;
+module.exports = {
+    router: router,
+    getById: getById
+}
