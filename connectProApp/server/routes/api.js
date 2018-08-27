@@ -32,13 +32,13 @@ router.get('/user/:id', function(req, res, next){
 });
 
 async function getById(id) {
-    console.log(id);
+    //console.log(id);
     await db.Users.findOne({_id: id}, function(err, user){
             if(user){
-                console.log('getById: user found');
+                //console.log('getById: user found');
                 return user;
             }
-            console.log('getById: USER NOT FOUND ' + err);
+            //console.log('getById: USER NOT FOUND ' + err);
             return null;
     });
 }
@@ -104,9 +104,9 @@ router.post('/register', function(req, res, next){
 
 router.post('/newPost/:id', function(req, res, next){
     console.log("IM here");
-    db.Posts.insertOne(
+    db.Posts.save(
         {user: req.params.id, content: req.body, likes: 0}
-    )
+    );
 });
 
 module.exports = {

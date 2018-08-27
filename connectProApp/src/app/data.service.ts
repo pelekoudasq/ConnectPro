@@ -49,6 +49,6 @@ export class DataService {
     }
 
     addPost(userId: string, content: string) {
-        return this.http.post("http://localhost:3000/api/register/newPost/"+userId, content);
+        return this.http.post("http://localhost:3000/api/newPost/"+userId, content);
     }
 }

@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
     }
 
     onClick(){
+        console.log(this.currentUser._id);
         this.dataService.addPost(this.currentUser._id, this.content)
             .subscribe(
                 data => {
