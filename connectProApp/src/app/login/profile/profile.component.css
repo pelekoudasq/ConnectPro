@@ -28,6 +28,14 @@ div {
     top: 4%;
 }
 
+.coloring {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-color: #999;
+    border-right-color: #999;
+}
+
 .profile-pic {
     display: block;
     

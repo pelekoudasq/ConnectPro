@@ -82,20 +82,29 @@ div {
     margin-bottom: 0;
 }
 
-.additional .inner-light {
-    width: 100%;
-    font-size: 12px;
-    text-align: center;
-    margin-top: 0;
+#add-file {
+    width: 0.1px;
+    height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
 
-.rest .additional { 
-    position: relative;
-    left: 3%;   
-    margin: auto 20px;
-    display: inline-flex;
-    margin-top: 0;
+#add-file + label {
+    font-size: 14px;
+    color: #353961;
+    display: inline-block;
+    align-content: center;
+    cursor: pointer;
 }
+
+
+#add-file:focus + label,
+#add-file + label:hover {
+    color: #555a96;
+}
+
 
 input, .button{
     font-size: 15px;
