@@ -154,6 +154,21 @@ input {
 //////////////////////////////////*/
 .feed {
     padding: 10px;
+    margin: 0 20px;
+    position: relative;
     height: 100%;
-    
+}
+
+.posts {
+    padding: 0;
+}
+
+.posts li {
+    width: 100%;
+    list-style-type: none;
+}
+
+.posts li div {
+    width: 100%;
+    margin: 5px 0;
 }
