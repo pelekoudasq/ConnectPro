@@ -3,6 +3,7 @@ import { User } from '../../../user';
 import { AppRoutingModule } from '../../app-routing.module';
 import { Router } from '@angular/router';
 import { DataService } from '../../data.service';
+import { Post } from '../../../post';
 
 @Component({
   selector: 'app-home',
@@ -30,8 +31,12 @@ export class HomeComponent implements OnInit {
     }
 
     onClick(){
-        console.log(this.currentUser._id);
-        this.dataService.addPost(this.currentUser._id, this.content)
+        console.log(this.currentUser._id + this.content);
+        var post = new Post();
+        post.user = this.currentUser._id;
+        post.content = this.content;
+        post.likes = 0;
+        this.dataService.addPost(post)
             .subscribe(
                 data => {
                     this.content = '';

@@ -9,6 +9,7 @@ const db = mongojs('mongodb://tedSofiaGiannis:ted1506@ds231941.mlab.com:31941/co
 const config = require('./config.json');
 
 const User = require('./user.model')
+const Post = require('./post.model')
 
 
 //Get ALL users
@@ -52,8 +53,8 @@ async function compareStuff(user, password){
             const { password, ...userWithoutHash } = userObj.toObject();
             console.log('Correct password ' );
             console.log('TOKEN: '+token);
-            console.log(userObj);
-            console.log(userWithoutHash);
+            //console.log(userObj);
+            //console.log(userWithoutHash);
             return {
                 ...userWithoutHash,
                 token
@@ -102,11 +103,10 @@ router.post('/register', function(req, res, next){
 
 //User posts
 
-router.post('/newPost/:id', function(req, res, next){
-    console.log("IM here");
-    db.Posts.save(
-        {user: req.params.id, content: req.body, likes: 0}
-    );
+router.post('/newPost', function(req, res, next){
+    var postParam = req.body;
+    const post = new Post(postParam);
+    db.Posts.save( post);
 });
 
 module.exports = {

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../user';
+import { Post } from '../post';
 import { map } from 'rxjs/operators';
 
 import { HttpClient } from '@angular/common/http';
@@ -48,7 +49,7 @@ export class DataService {
         return this.http.post("http://localhost:3000/api/register", user);
     }
 
-    addPost(userId: string, content: string) {
-        return this.http.post("http://localhost:3000/api/newPost/"+userId, content);
+    addPost(post: Post) {
+        return this.http.post("http://localhost:3000/api/newPost/", post);
     }
 }
