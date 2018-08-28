@@ -32,7 +32,9 @@ export class HomeComponent implements OnInit {
 
 
         for (this.post in this.posts) {
-
+            if(this.post){
+                
+            }
         }
     }
 
