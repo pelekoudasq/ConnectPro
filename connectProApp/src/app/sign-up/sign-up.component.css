@@ -129,6 +129,29 @@ button:hover {
     opacity: 0.4;
 }
 
+#user-conf {
+    z-index: 5;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+}
+
+#welc {
+    position: relative;
+    top:40%;
+}
+
+.coloring {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-color: #999;
+    border-right-color: #999;
+}
+
+
 @keyframes alertAnim {
     from {
         opacity: 0;
