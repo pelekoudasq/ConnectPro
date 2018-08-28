@@ -66,7 +66,9 @@ export class SignUpComponent implements OnInit {
             this.dataService.registerUser(user).subscribe(users => {
                 console.log(users);
             });
-            this.router.navigate(['']);
+            setTimeout(() => {
+                this.router.navigate(['']);
+            }, 2000);
         } else {
             console.log('try again')
             return false;
