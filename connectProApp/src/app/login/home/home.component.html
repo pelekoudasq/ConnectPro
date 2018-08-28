@@ -29,11 +29,11 @@
             <ul class="posts">
                 <li *ngFor="let post of posts.slice().reverse()">
                     <div class="feed coloring">
-                        {{post.user}}, {{post.createdDate}}
+                        {{post.user}}, Posted at: {{post.createdDate}}
                         <br>
                         {{post.content}}
                         <br>
-                        {{post.likes}}
+                        Likes: {{post.likes}}
                     </div>
                 </li>
             </ul>
