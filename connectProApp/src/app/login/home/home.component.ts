@@ -13,7 +13,7 @@ import { Post } from '../../../post';
 export class HomeComponent implements OnInit {
 
     currentUser: User;
-    posts: Post[] = [];
+    posts: Post[];
     content: string;
 
     constructor(private router: Router, private dataService: DataService) {
@@ -24,24 +24,26 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.log('NEW HOME');
         this.content = '';
 
         this.dataService.getPosts()
-            .subscribe(res => this.posts);
+            .subscribe(res => this.posts = res);
     }
 
     onClick(){
         console.log(this.currentUser._id + this.content);
         var post = new Post();
-        this.content= '';
         post.user = this.currentUser._id;
         post.content = this.content;
+        this.content= '';
         post.likes = 0;
         this.dataService.addPost(post)
             .subscribe(
                 data => {
-                    this.content = '';
+                    this.ngOnInit();
                 });
+        this.ngOnInit();
     }
 
 }
