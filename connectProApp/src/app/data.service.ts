@@ -21,6 +21,11 @@ export class DataService {
             /*.map(res => res.json())*/;
     }
 
+    getPosts() {
+        return this.http.get("http://localhost:3000/api/posts")
+            /*.map(res => res.json())*/;
+    }
+
     login(email: string, password: string) {
         return this.http.post<any>("http://localhost:3000/api/login", {email: email, password: password})
             /*.map(res => res.json())*/

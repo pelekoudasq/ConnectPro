@@ -13,7 +13,7 @@ import { Post } from '../../../post';
 export class HomeComponent implements OnInit {
 
     currentUser: User;
-    users: User[] = [];
+    posts: Post[] = [];
     content: string;
 
     constructor(private router: Router, private dataService: DataService) {
@@ -26,8 +26,8 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         this.content = '';
 
-        this.dataService.getUsers()
-            .subscribe(res=> console.log(res));
+        this.dataService.getPosts()
+            .subscribe(res => this.posts);
     }
 
     onClick(){

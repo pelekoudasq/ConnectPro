@@ -22,6 +22,16 @@ router.get('/users', function(req, res, next){
     });
 });
 
+//Get ALL posts
+router.get('/posts', function(req, res, next){
+    db.Posts.find(function(err, posts){
+        if(err){
+            res.send(err);
+        }
+        res.json(posts);
+    });
+});
+
 //Get single user
 router.get('/user/:id', function(req, res, next){
     db.Users.findOne({_id: mongojs.ObjectID(req.params.id)}, function(err, user){
@@ -106,7 +116,7 @@ router.post('/register', function(req, res, next){
 router.post('/newPost', function(req, res, next){
     var postParam = req.body;
     const post = new Post(postParam);
-    db.Posts.save( post);
+    db.Posts.save(post);
 });
 
 module.exports = {
