@@ -71,6 +71,7 @@ div {
 .user-post {
     padding: 10px;
     margin: 0 20px;
+    position: relative;
 }
 
 .user-post p {
@@ -80,6 +81,10 @@ div {
 .text {
     height: 50px;
     margin-bottom: 0;
+}
+
+.content {
+    position: relative;
 }
 
 #add-file {
@@ -92,11 +97,13 @@ div {
 }
 
 #add-file + label {
-    font-size: 14px;
+    left: 10%;
+    top: 5px;
+    position: relative;
+    font-size: 15px;
     color: #353961;
-    display: inline-block;
-    align-content: center;
     cursor: pointer;
+    font-weight: bold;
 }
 
 

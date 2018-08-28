@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
     onClick(){
         console.log(this.currentUser._id + this.content);
         var post = new Post();
+        this.content= '';
         post.user = this.currentUser._id;
         post.content = this.content;
         post.likes = 0;

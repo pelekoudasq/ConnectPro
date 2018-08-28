@@ -21,9 +21,11 @@
     <div class="page">
         <form class="user-post coloring">
             <p>Share your thoughts!</p>
-            <input class="inner-light text" [(ngModel)]="content" type="text" placeholder="Write a post!" name="content">
-            <input id="add-file" class="inner-light" type="file">
-            <label for="add-file">Choose a file</label>
+            <div class="content">
+                <input class="inner-light text" [(ngModel)]="content" type="text" placeholder="Write a post!" name="content">
+                <input id="add-file" type="file">
+                <label for="add-file">Choose a file</label>
+            </div>
             <button class="button" type="submit" (click)="onClick()">Post</button>
         </form>
         <div class="feed coloring">
