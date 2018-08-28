@@ -22,14 +22,23 @@
         <form class="user-post coloring">
             <p>Share your thoughts!</p>
             <input class="inner-light text" [(ngModel)]="content" type="text" placeholder="Write a post!" name="content">
-            <div class="additional">
-                <input class="inner-light" type="file" placeholder="Add a file">
-                <input class="inner-light" type="url" placeholder="Add a url">
-            </div>
+            <input id="add-file" class="inner-light" type="file">
+            <label for="add-file">Choose a file</label>
             <button class="button" type="submit" (click)="onClick()">Post</button>
         </form>
         <div class="feed coloring">
             <p>This is where all news will be displayed</p>
+            <ul>
+                <li *ngFor="let post of posts">
+                    <div class="post">
+                        {{post.user}}, {{post.date}}
+                        <br>
+                        {{post.content}}
+                        <br>
+                        {{post.likes}}
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
