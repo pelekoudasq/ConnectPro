@@ -28,11 +28,10 @@
             </div>
             <button class="button" type="submit" (click)="onClick()">Post</button>
         </form>
-        <div class="feed coloring">
-            <p>This is where all news will be displayed</p>
+        <div >
             <ul>
-                <li *ngFor="let post of posts">
-                    <div class="post">
+                <li *ngFor="let post of posts.slice().reverse()">
+                    <div class="feed coloring">
                         {{post.user}}, {{post.date}}
                         <br>
                         {{post.content}}

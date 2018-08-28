@@ -22,7 +22,7 @@ export class DataService {
     }
 
     getPosts() {
-        return this.http.get("http://localhost:3000/api/posts")
+        return this.http.get<any>("http://localhost:3000/api/posts")
             /*.map(res => res.json())*/;
     }
 
