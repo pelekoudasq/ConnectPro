@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
     currentUser: User;
     posts: Post[];
+    post: any;
     content: string;
 
     constructor(private router: Router, private dataService: DataService) {
@@ -24,15 +25,18 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('NEW HOME');
         this.content = '';
 
         this.dataService.getPosts()
             .subscribe(res => this.posts = res);
+
+
+        for (this.post in this.posts) {
+
+        }
     }
 
     onClick(){
-        console.log(this.currentUser._id + this.content);
         var post = new Post();
         post.user = this.currentUser._id;
         post.content = this.content;

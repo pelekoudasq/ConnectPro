@@ -3,4 +3,5 @@ export class Post{
     user: string;
     content: string;
     likes: number;
+    createdDate: string;
 }
