@@ -27,9 +27,9 @@
         </form>
         <div >
             <ul class="posts">
-                <li *ngFor="let post of posts.slice().reverse()">
-                    <div class="feed coloring">
-                        {{post.user}}, Posted at: {{post.createdDate}}
+                <li *ngFor="let post of posts?.slice().reverse(); let i = index; trackBy: trackByFunc">
+                    <div class="feed coloring" id="post{{posts.indexOf(post)}}">
+                        {{post.userName}}
                         <br>
                         {{post.content}}
                         <br>

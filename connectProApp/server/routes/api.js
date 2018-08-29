@@ -34,6 +34,7 @@ router.get('/posts', function(req, res, next){
 
 //Get single user
 router.get('/user/:id', function(req, res, next){
+    console.log('find user with id'+ req.params.id);
     db.Users.findOne({_id: mongojs.ObjectID(req.params.id)}, function(err, user){
         if(err){
             res.send(err);
