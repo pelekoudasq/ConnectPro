@@ -16,6 +16,7 @@ import { NetworkComponent } from './login/network/network.component';
 import { JobsComponent } from './login/jobs/jobs.component';
 import { MessagingComponent } from './login/messaging/messaging.component';
 import { NotificationsComponent } from './login/notifications/notifications.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { NotificationsComponent } from './login/notifications/notifications.comp
     NetworkComponent,
     JobsComponent,
     MessagingComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    AdminComponent
   ],
   imports: [
     HttpClientModule,
