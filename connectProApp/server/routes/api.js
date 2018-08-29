@@ -107,7 +107,7 @@ router.post('/register', function(req, res, next){
 
             // save user
             console.log('user not found '+flag);
-            db.Users.save({firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password});
+            db.Users.save({firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password, userType: user.userType});
         }
     });
 });

@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     posts: Post[];
     content: string;
     dataReady: boolean;
-    
+
 
     constructor(private router: Router, private dataService: DataService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -30,15 +30,15 @@ export class HomeComponent implements OnInit {
         this.dataReady = false;
         this.content = '';
 
-        console.log('GET POSTS');
+        //console.log('GET POSTS');
         this.dataService.getPosts()
             .subscribe(res =>{
                 this.posts = res;
                 this.getNames();
                 this.dataReady = true;
-                    
+
             });
-        
+
 
 
     }
@@ -58,16 +58,16 @@ export class HomeComponent implements OnInit {
     }
 
     getNames(){
-        console.log('GET NAMES');
+        //console.log('GET NAMES');
         if (this.posts){
             for (let i = 0; i < this.posts.length; i++){
                 if(this.posts[i]){
-                    console.log(this.posts[i].user);
+                    //console.log(this.posts[i].user);
                     this.dataService.getUser(this.posts[i].user)
                     .subscribe(res => {
-                        console.log(res);
+                        //console.log(res);
                         this.posts[i].userName = res;
-                        console.log(this.posts[i].userName);
+                        //console.log(this.posts[i].userName);
                     });
                 }
             }

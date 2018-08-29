@@ -33,8 +33,12 @@ export class WelcomePageComponent implements OnInit {
         this.dbError = true;
     }
 
-    found(){
+    foundUser(){
         this.router.navigate(['login/home']);
+    }
+
+    foundAdmin(){
+        this.router.navigate(['admin']);
     }
 
     onClick(){
@@ -44,7 +48,12 @@ export class WelcomePageComponent implements OnInit {
         this.dataService.login(this.email, this.password)
             .subscribe(
                 data => {
-                    this.found();
+                    if (data.userType == 'user'){
+                        console.log('HERE', data.userType);
+                        this.foundUser();
+                    }
+                    else
+                        this.foundAdmin();
                 },
                 error =>{
                     this.dbErrorFound();
