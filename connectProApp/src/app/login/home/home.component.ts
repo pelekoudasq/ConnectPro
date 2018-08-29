@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
     currentUser: User;
     posts: Post[];
     content: string;
+    dataReady: boolean;
     
 
     constructor(private router: Router, private dataService: DataService) {
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
 
 
     ngOnInit() {
+        this.dataReady = false;
         this.content = '';
 
         console.log('GET POSTS');
@@ -33,7 +35,10 @@ export class HomeComponent implements OnInit {
             .subscribe(res =>{
                 this.posts = res;
                 this.getNames();
+                this.dataReady = true;
+                    
             });
+        
 
 
     }
@@ -54,7 +59,6 @@ export class HomeComponent implements OnInit {
 
     getNames(){
         console.log('GET NAMES');
-        //setTimeout(() => {
         if (this.posts){
             for (let i = 0; i < this.posts.length; i++){
                 if(this.posts[i]){
@@ -68,7 +72,6 @@ export class HomeComponent implements OnInit {
                 }
             }
         }
-        //}, 500);
     }
 
     trackByFn(){
