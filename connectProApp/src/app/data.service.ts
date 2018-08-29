@@ -17,7 +17,7 @@ export class DataService {
     }
 
     getUsers() {
-        return this.http.get("http://localhost:3000/api/users")
+        return this.http.get<any>("http://localhost:3000/api/users")
             /*.map(res => res.json())*/;
     }
 

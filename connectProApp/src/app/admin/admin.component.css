@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    padding: 0;
+    background-color: #353961;
+}
+
+/*////////////////////////////////////////////////////*/
+
+div {
+    margin: 50px 20px;
+}
+
+.rest {
+    position: absolute;
+    background-color: rgba(214, 222, 241, 0.7);
+    border: 1px solid #353961;
+    padding: 10px;
+    left: 8%;
+    top: 4%;
+    width: 80%;
+    height: 100%;
+}
+
+.coloring {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-color: #999;
+    border-right-color: #999;
+}
+
+.all-users {
+    padding: 0;
+}
+
+.all-users li {
+    width: 100%;
+    list-style-type: none;
+}
+
+.all-users li div {
+    width: 100%;
+    margin: 5px 0;
+    overflow: auto;
+}

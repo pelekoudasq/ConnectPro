@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { User } from '../../user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+    currentUser: User;
+    users: User[];
 
-  ngOnInit() {
-  }
+    constructor(private router: Router, private dataService: DataService) {
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (!this.currentUser){
+            this.router.navigate(['']);
+        }
+    }
+    ngOnInit() {
+        this.dataService.getUsers()
+            .subscribe(res => this.users = res);
+    }
 
 }
