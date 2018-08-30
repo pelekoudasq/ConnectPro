@@ -21,6 +21,12 @@ export class DataService {
             /*.map(res => res.json())*/;
     }
 
+    searchUsers(searchItem: string) {
+        console.log('intoo the deeeeepp');
+        return this.http.post<any>("http://localhost:3000/api/search", {searchItem: searchItem})
+            /*.map(res => res.json())*/;
+    }
+
     getPosts() {
         return this.http.get<any>("http://localhost:3000/api/posts")
             /*.map(res => res.json())*/;
@@ -43,7 +49,7 @@ export class DataService {
     logout() {
        // remove user from local storage to log user out
        localStorage.removeItem('currentUser');
-   }
+    }
 
     getUser(id: string) {
         return this.http.get<any>("http://localhost:3000/api/user/"+id)

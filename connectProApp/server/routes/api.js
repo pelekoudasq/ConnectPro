@@ -12,6 +12,23 @@ const User = require('./user.model')
 const Post = require('./post.model')
 
 
+router.post('/search', function(req, res, next){
+
+    console.log('HERE: '+req.body.searchItem);
+    var searchParam = req.body.searchItem;
+    db.Users.find(
+        {$or:[
+            {'firstName':{'$in':[searchParam.split(' ')[0],searchParam.split(' ')[1]]}},
+            {'lastName':{'$in':[searchParam.split(' ')[0],searchParam.split(' ')[1]]}}
+        ]}
+    , function(err, users){
+        if(err){
+            res.send(err);
+        }
+        res.json(users);
+    })
+});
+
 //Get ALL users
 router.get('/users', function(req, res, next){
     db.Users.find(function(err, users){
@@ -34,7 +51,7 @@ router.get('/posts', function(req, res, next){
 
 //Get single user
 router.get('/user/:id', function(req, res, next){
-    console.log('find user with id'+ req.params.id);
+    //console.log('find user with id'+ req.params.id);
     db.Users.findOne({_id: mongojs.ObjectID(req.params.id)}, function(err, user){
         if(err){
             res.send(err);

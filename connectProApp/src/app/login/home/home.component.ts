@@ -47,7 +47,6 @@ export class HomeComponent implements OnInit {
                 this.posts = res;
                 this.getNames();
                 this.dataReady = true;
-
             });
 
     }
