@@ -9,6 +9,8 @@ import { NetworkComponent } from './login/network/network.component';
 import { JobsComponent } from './login/jobs/jobs.component';
 import { MessagingComponent } from './login/messaging/messaging.component';
 import { NotificationsComponent } from './login/notifications/notifications.component';
+import { SearchComponent } from './login/search/search.component';
+
 
 
 const routes: Routes = [
@@ -20,7 +22,8 @@ const routes: Routes = [
     { path: 'login/network', component: NetworkComponent, data:{requiresLogin: true} },
     { path: 'login/jobs', component: JobsComponent, data:{requiresLogin: true} },
     { path: 'login/messaging', component: MessagingComponent, data:{requiresLogin: true} },
-    { path: 'login/notifications', component: NotificationsComponent, data:{requiresLogin: true} }
+    { path: 'login/notifications', component: NotificationsComponent, data:{requiresLogin: true} },
+    { path: 'login/search', component: SearchComponent, data:{requiresLogin: true} }
 ];
 
 @NgModule({

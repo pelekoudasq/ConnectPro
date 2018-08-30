@@ -17,6 +17,7 @@ import { JobsComponent } from './login/jobs/jobs.component';
 import { MessagingComponent } from './login/messaging/messaging.component';
 import { NotificationsComponent } from './login/notifications/notifications.component';
 import { AdminComponent } from './admin/admin.component';
+import { SearchComponent } from './login/search/search.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { AdminComponent } from './admin/admin.component';
     JobsComponent,
     MessagingComponent,
     NotificationsComponent,
-    AdminComponent
+    AdminComponent,
+    SearchComponent
   ],
   imports: [
     HttpClientModule,
