@@ -5,17 +5,21 @@ import { Router } from '@angular/router';
 import { DataService } from '../../data.service';
 import { Post } from '../../../post';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
+
 export class HomeComponent implements OnInit {
 
     currentUser: User;
     posts: Post[];
     content: string;
     dataReady: boolean;
+    search: string;
 
 
     constructor(private router: Router, private dataService: DataService) {
@@ -25,6 +29,11 @@ export class HomeComponent implements OnInit {
         }
     }
 
+    onSearchClick(){
+        console.log('SEARCH CLICKED!');
+        localStorage.setItem('searchItem', JSON.stringify(this.search));
+        this.router.navigate(['login/search']);
+    }
 
     ngOnInit() {
         this.dataReady = false;
@@ -38,8 +47,6 @@ export class HomeComponent implements OnInit {
                 this.dataReady = true;
 
             });
-
-
 
     }
 
