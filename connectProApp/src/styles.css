@@ -108,7 +108,7 @@ html, body{
 
 /*////////////////////////////////////////////////////*/
 
-::-webkit-scrollbar {
+::-webkit-scrollbar{
     width: 10px;
     height: 5px;
     border-radius: 5px;
