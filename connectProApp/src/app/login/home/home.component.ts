@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
         if (!this.currentUser){
             this.router.navigate(['']);
         }
+        localStorage.removeItem('searchItem');
     }
 
     onSearchClick(){

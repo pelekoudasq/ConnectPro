@@ -10,7 +10,7 @@
     <li>
         <div id="search">
             <form>
-                <input type="text" placeholder="Search.." name="search">
+                <input [(ngModel)]="search" type="text" placeholder="Search.." name="search">
                 <button (click)="onSearchClick()" type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -25,7 +25,7 @@
       <h3>Hi {{currentUser.firstName}} {{currentUser.lastName}}!</h3>
       <p>Here is your email: {{currentUser.email}}</p>
     </div>
-    
+
     <br>
     <br>
 </div>

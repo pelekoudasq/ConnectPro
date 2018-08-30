@@ -21,20 +21,24 @@ export class SearchComponent implements OnInit {
             if (!this.currentUser){
                 this.router.navigate(['']);
             }
-        this.searchItem = JSON.parse(localStorage.getItem('searchItem'));
-            if(!this.searchItem){
-                this.router.navigate(['login/home']);
-            }
+
     }
 
     onSearchClick(){
         console.log('SEARCH CLICKED!');
         localStorage.setItem('searchItem', JSON.stringify(this.search));
-        this.router.navigate(['login/search']);
+        //this.router.navigate(['login/search']);
+        this.ngOnInit();
     }
 
     ngOnInit() {
+        this.searchItem = JSON.parse(localStorage.getItem('searchItem'));
+            if(!this.searchItem){
+                console.log('no search item');
+                this.router.navigate(['login/home']);
+            }
         console.log(this.searchItem);
+        //search in db
         localStorage.removeItem('searchItem');
     }
 
