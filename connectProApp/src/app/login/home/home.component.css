@@ -85,6 +85,7 @@ div {
 }
 
 .info p {
+    font-weight: bold;
     font-size: 18px;
     align-content: center;
 }
