@@ -14,7 +14,7 @@ const Post = require('./post.model')
 
 router.post('/search', function(req, res, next){
 
-    console.log('HERE: '+req.body.searchItem);
+    console.log('api: post search');
     var searchParam = req.body.searchItem;
     db.Users.find(
         {$or:[
@@ -31,6 +31,7 @@ router.post('/search', function(req, res, next){
 
 //Get ALL users
 router.get('/users', function(req, res, next){
+    console.log('api: get users');
     db.Users.find(function(err, users){
         if(err){
             res.send(err);
@@ -41,6 +42,7 @@ router.get('/users', function(req, res, next){
 
 //Get ALL posts
 router.get('/posts', function(req, res, next){
+    console.log('api: get posts');
     db.Posts.find(function(err, posts){
         if(err){
             res.send(err);
@@ -51,6 +53,7 @@ router.get('/posts', function(req, res, next){
 
 //Get single user
 router.get('/user/:id', function(req, res, next){
+    console.log('api: get user id');
     //console.log('find user with id'+ req.params.id);
     db.Users.findOne({_id: mongojs.ObjectID(req.params.id)}, function(err, user){
         if(err){
@@ -74,13 +77,13 @@ async function getById(id) {
 
 async function compareStuff(user, password){
     if(user){
-        console.log('User with this email found');
+        //console.log('User with this email found');
         if (bcrypt.compareSync(password, user.password)){
             const token = jwt.sign({ sub: user.id }, config.secret); // <==== The all-important "jwt.sign" function
             const userObj = new User(user);
             const { password, ...userWithoutHash } = userObj.toObject();
-            console.log('Correct password ' );
-            console.log('TOKEN: '+token);
+            //console.log('Correct password ' );
+            //console.log('TOKEN: '+token);
             //console.log(userObj);
             //console.log(userWithoutHash);
             return {
@@ -92,6 +95,7 @@ async function compareStuff(user, password){
 }
 
 router.post('/login', function(req, res, next){
+    console.log('api: post login');
     var email, password;
     var userToSend;
     email = req.body.email;
@@ -105,16 +109,16 @@ router.post('/login', function(req, res, next){
 
 //Save a new user
 router.post('/register', function(req, res, next){
-
+    console.log('api: post register');
     var flag = 0;
     var userParam = req.body;
     db.Users.findOne({ email: userParam.email }, function(err, user){
         if(user){
             res.send(user);
-            console.log('user found '+flag);
+            //console.log('user found '+flag);
             return;
         } else {
-            console.log('about to change flag '+flag);
+            //console.log('about to change flag '+flag);
             flag++;
             const user = new User(userParam);
 
@@ -123,7 +127,7 @@ router.post('/register', function(req, res, next){
                 user.password = bcrypt.hashSync(userParam.password, 10);
 
             // save user
-            console.log('user not found '+flag);
+            //console.log('user not found '+flag);
             db.Users.save({firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password, userType: user.userType});
         }
     });
@@ -132,6 +136,7 @@ router.post('/register', function(req, res, next){
 //User posts
 
 router.post('/newPost', function(req, res, next){
+    console.log('api: post newPost');
     var postParam = req.body;
     const post = new Post(postParam);
     db.Posts.save(post);

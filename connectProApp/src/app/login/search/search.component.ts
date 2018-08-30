@@ -42,11 +42,13 @@ export class SearchComponent implements OnInit {
             }
         //console.log(this.searchItem);
         //start -- search in db
-        this.dataService.searchUsers(this.searchItem)
-            .subscribe(res =>{
-                this.users = res;
-                this.dataReady = true;
-            });
+        if (this.searchItem){
+            this.dataService.searchUsers(this.searchItem)
+                .subscribe(res =>{
+                    this.users = res;
+                    this.dataReady = true;
+                });
+        }
         //end -- search in db
         //console.log(this.users);
         localStorage.removeItem('searchItem');
