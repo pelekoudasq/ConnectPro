@@ -13,6 +13,41 @@ header {
 
 /*////////////////////////////////////////////////////*/
 
+.search {
+    margin: 10px;
+    top: 0;
+}
+
+.search li {
+    position: relative;
+    bottom: 20px;
+}
+
+.search input[type=text] {
+    height: 20px;
+    width: 200px;
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+}
+
+.search button {
+    float: right;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.search form {
+    display: inline-block;
+}
+
+/*////////////////////////////////////////////////////*/
+
 div {
     margin: 50px 20px;
 }

@@ -1,13 +1,21 @@
 <header>
     <ul class="navigationBar">
-      <li><a routerLink="./"><img src="../../../favicon.ico"></a></li>
-      <li class="active-link"><a routerLink="./">Home</a></li>
-      <li><a routerLink="../network">My Network</a></li>
-      <li><a routerLink="../jobs">Jobs</a></li>
-      <li><a routerLink="../messaging">Messaging</a></li>
-      <li><a routerLink="../notifications">Notifications</a></li>
-      <li><a routerLink="../profile">Profile</a></li>
-      <li id="logout"><a [routerLink]="['']">Logout</a></li>
+        <li><a routerLink="./"><img src="../../../favicon.ico"></a></li>
+        <li class="active-link"><a routerLink="./">Home</a></li>
+        <li><a routerLink="../network">My Network</a></li>
+        <li><a routerLink="../jobs">Jobs</a></li>
+        <li><a routerLink="../messaging">Messaging</a></li>
+        <li><a routerLink="../notifications">Notifications</a></li>
+        <li><a routerLink="../profile">Profile</a></li>
+        <li>
+            <div class="search">
+                <form>
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </li>
+        <li id="logout"><a [routerLink]="['']">Logout</a></li>
     </ul>
 </header>
 <div class="rest">
