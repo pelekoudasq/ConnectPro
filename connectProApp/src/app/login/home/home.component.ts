@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
         this.dataReady = false;
         this.content = '';
+        this.search = '';
 
         //console.log('GET POSTS');
         this.dataService.getPosts()
