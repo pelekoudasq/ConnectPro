@@ -13,53 +13,6 @@ header {
 
 /*////////////////////////////////////////////////////*/
 
-#search {
-    margin: 0;
-    position: relative;
-}
-
-#search li {
-    position: relative;
-    bottom: 15px;
-}
-
-#search input[type=text] {
-    height: 25px;
-    width: 200px;
-    padding: 5px;
-    font-size: 15px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border: none;
-}
-
-#search button {
-    height:25px;
-    float: right;
-    padding: 6px 10px;
-    margin-top: 2px;
-    margin-right: 16px;
-    background: rgba(255, 255, 255, 0.5);
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-}
-
-#search button:hover {
-    background: rgba(255, 255, 255, 1)
-}
-
-#search form {
-    display: inline-block;
-    position: relative;
-    bottom: 15px;
-}
-
-#search i {
-    position: relative;
-    bottom: 2px;
-}
-
-/*////////////////////////////////////////////////////*/
 
 div {
     margin: 50px 20px;
@@ -73,12 +26,4 @@ div {
     left: 8%;
     width: 80%;
     height: 100%;
-}
-
-.coloring {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    border-bottom-color: #999;
-    border-right-color: #999;
 }
