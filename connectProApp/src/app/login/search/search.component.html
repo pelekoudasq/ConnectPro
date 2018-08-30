@@ -19,6 +19,13 @@
     </ul>
 </header>
 
-<div class="rest coloring">
+<div class="rest">
     <h3> Search results for: {{searchItem}}</h3>
+    <ul id="all-results">
+        <li *ngFor="let user of users">
+            <div id="result" class= "coloring">
+                {{user.firstName}} {{user.lastName}}
+            </div>
+        </li>
+    </ul>
 </div>
