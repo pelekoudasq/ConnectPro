@@ -7,6 +7,14 @@
       <li><a routerLink="../messaging">Messaging</a></li>
       <li class="active-link"><a routerLink="./">Notifications</a></li>
       <li><a routerLink="../profile">Profile</a></li>
+      <li>
+            <div id="search">
+                <form>
+                    <input type="text" placeholder="Search.." name="search">
+                    <button (click)="onSearchClick()" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </li>
       <li id="logout"><a [routerLink]="['']">Logout</a></li>
     </ul>
 </header>

@@ -14,6 +14,7 @@ export class SearchComponent implements OnInit {
     searchItem: string;
     currentUser: User;
     users: User[] = [];
+    search: string;
 
     constructor(private router: Router, private dataService: DataService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -26,8 +27,15 @@ export class SearchComponent implements OnInit {
             }
     }
 
+    onSearchClick(){
+        console.log('SEARCH CLICKED!');
+        localStorage.setItem('searchItem', JSON.stringify(this.search));
+        this.router.navigate(['login/search']);
+    }
+
     ngOnInit() {
         console.log(this.searchItem);
+        localStorage.removeItem('searchItem');
     }
 
 
