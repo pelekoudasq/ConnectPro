@@ -120,7 +120,7 @@ html, body{
 }
 
 .coloring {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8) !important;
     border-radius: 5px;
     border: 1px solid #ccc;
     border-bottom-color: #999;
