@@ -34,6 +34,7 @@ div {
 
 #all-results {
     padding: 0;
+
 }
 
 #all-results li {
@@ -45,4 +46,11 @@ div {
     width: 100%;
     margin: 5px 0;
     overflow: auto;
+}
+
+.page {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 65%;
 }
