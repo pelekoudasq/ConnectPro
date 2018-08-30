@@ -13,37 +13,50 @@ header {
 
 /*////////////////////////////////////////////////////*/
 
-.search {
-    margin: 10px;
-    top: 0;
-}
-
-.search li {
+#search {
+    margin: 0;
     position: relative;
-    bottom: 20px;
 }
 
-.search input[type=text] {
-    height: 20px;
+#search li {
+    position: relative;
+    bottom: 15px;
+}
+
+#search input[type=text] {
+    height: 25px;
     width: 200px;
     padding: 5px;
     font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
     border: none;
 }
 
-.search button {
+#search button {
+    height:25px;
     float: right;
     padding: 6px 10px;
-    margin-top: 8px;
+    margin-top: 2px;
     margin-right: 16px;
-    background: #ddd;
+    background: rgba(255, 255, 255, 0.5);
     font-size: 17px;
     border: none;
     cursor: pointer;
 }
 
-.search form {
+#search button:hover {
+    background: rgba(255, 255, 255, 1)
+}
+
+#search form {
     display: inline-block;
+    position: relative;
+    bottom: 15px;
+}
+
+#search i {
+    position: relative;
+    bottom: 2px;
 }
 
 /*////////////////////////////////////////////////////*/
@@ -72,7 +85,6 @@ div {
 }
 
 .info p {
-    font-weight: bold;
     font-size: 18px;
     align-content: center;
 }
@@ -148,7 +160,7 @@ div {
 }
 
 
-input, .button{
+.rest input, .rest button{
     font-size: 15px;
     height: 30px;
     border: 1px solid #ccc;
@@ -158,12 +170,12 @@ input, .button{
     
 }
 
-button:hover {
+.rest button:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-button {
+.rest button {
     color: rgba(214, 222, 241, 0.7);
     left: 40%;
     width:15%;
@@ -171,7 +183,7 @@ button {
     background-color: #353961;
 }
 
-input {
+.rest input {
     width: 80%;
     margin: 10px;
     left: 8%;
