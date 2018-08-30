@@ -32,10 +32,17 @@ div {
     margin: 20px 20px;
 }
 
-.coloring {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    border-bottom-color: #999;
-    border-right-color: #999;
+#all-results {
+    padding: 0;
+}
+
+#all-results li {
+    width: 100%;
+    list-style-type: none;
+}
+
+#all-results li div {
+    width: 100%;
+    margin: 5px 0;
+    overflow: auto;
 }
