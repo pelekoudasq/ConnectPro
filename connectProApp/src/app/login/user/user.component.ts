@@ -16,7 +16,7 @@ export class UserComponent implements OnInit {
     dataReady: boolean;
     search: string;
     user: User;
-    requested: boolean=false;
+    requested: boolean;
 
 
     constructor(private router: Router, private dataService: DataService, private route: ActivatedRoute) {
@@ -35,21 +35,39 @@ export class UserComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        console.log('INITIALIZE');
+        this.requested = false;
+
         this.userIdToRequest = this.route.snapshot.params.id;
         //console.log(this.userIdToRequest);
         if (this.userIdToRequest == this.currentUser._id) {
             this.router.navigate(['login/profile']);
         }
+        if (this.userIdToRequest){
+            this.dataService.getUserObj(this.userIdToRequest)
+            .subscribe(res=> {
+                this.user = res;
+            });
+        }
+
+        //check if already requested (or friends kapoia allh stigmi)
+        if(this.currentUser && this.user){
+        console.log('HERE');
+            this.dataService.checkRequested(this.currentUser._id, this.user._id)
+                .subscribe(
+                    data => {
+                        console.log('requested' + data);
+                        this.requested = true;
+                        document.getElementById("connect").value = "Requested";
+                    }
+                );
+        }
+
 
         this.dataReady = false;
         this.search = '';
 
-       if (this.userIdToRequest){
-            this.dataService.getUserObj(this.userIdToRequest)
-                .subscribe(res=> {
-                    this.user = res;
-                });
-        }
     }
 
     onConnectClick(){
@@ -58,9 +76,9 @@ export class UserComponent implements OnInit {
             this.dataService.requestConnection(this.currentUser._id, this.user._id)
                 .subscribe(res=> {
                     console.log(res);
-                    this.ngOnInit();
                 });
         }
+        this.ngOnInit();
     }
 
 }

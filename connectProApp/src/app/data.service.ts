@@ -81,6 +81,17 @@ export class DataService {
         return this.http.post("http://localhost:3000/api/newPost/", post);
     }
 
+    checkRequested(userAsking: string, userAsked: string){
+        return this.http.get<any>("http://localhost:3000/api/checkRequested/", {userAsking: userAsking, userAsked: userAsked});
+        .pipe(map(userRes => {
+            if (userRes) {
+                console.log('dataService: here');
+                console.log(userRes);
+            }
+            return (userRes);
+        }));
+    }
+
     requestConnection(userAsking: string, userAsked: string) {
         return this.http.post<any>("http://localhost:3000/api/request", {userAsking: userAsking, userAsked: userAsked});
     }

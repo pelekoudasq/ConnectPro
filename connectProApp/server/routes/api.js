@@ -129,12 +129,13 @@ router.post('/register', function(req, res, next){
             // save user
             //console.log('user not found '+flag);
             db.Users.save({firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password, userType: user.userType});
-            db.Users.findOne({ email: user.email }, function(err, newUser){
+            /*db.Users.findOne({ email: user.email }, function(err, newUser){
                 if(err){
                     return;
                 }
-                db.Connections.save({ userId: newUser._id });
-            });
+                var newU = newUser._id.valueOf();
+                db.Connections.save({ userId: newU, friends: [], requests: [] });
+            });*/
         }
     });
 });
@@ -148,6 +149,18 @@ router.post('/newPost', function(req, res, next){
     db.Posts.save(post);
 });
 
+router.get('/checkRequested', function(req, res, next){
+    console.log('api: get checkRequested');
+    var userAsking = req.body.userAsking;
+    var userAsked = req.body.userAsked;
+    db.Connections.find({ userId: userAsked, requests: { $in: [userAsking] } }, function(err, id){
+        if (err){
+            return err;
+        }
+        return id;
+    })
+});
+
 router.post('/request', function(req, res, next){
     console.log('api: post request');
     var userAsking = req.body.userAsking;
@@ -158,7 +171,9 @@ router.post('/request', function(req, res, next){
         }
         db.Connections.findAndModify({
             query: {userId: userAsked},
-            update: {$push: { requests: userAsking}}
+            update: {$push: { requests: userAsking }},
+            new: true,
+            upsert : true
         }, function(err,user){
             if(err){
                 return;
