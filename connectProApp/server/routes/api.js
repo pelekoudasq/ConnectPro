@@ -129,6 +129,14 @@ router.post('/register', function(req, res, next){
             // save user
             //console.log('user not found '+flag);
             db.Users.save({firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password, userType: user.userType});
+            db.Users.findOne({ email: user.email }, function(err, newUser){
+                if(err){
+                    console.log('FUCK');
+                    return;
+                }
+                console.log('wtf');
+                db.Connections.save({ userId: newUser._id });
+            });
         }
     });
 });
