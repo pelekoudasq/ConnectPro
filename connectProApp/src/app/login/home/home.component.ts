@@ -72,13 +72,23 @@ export class HomeComponent implements OnInit {
                 if(this.posts[i]){
                     //console.log(this.posts[i].user);
                     this.dataService.getUser(this.posts[i].user)
-                    .subscribe(res => {
-                        //console.log(res);
-                        this.posts[i].userName = res;
-                        //console.log(this.posts[i].userName);
-                    });
+                        .subscribe(res => {
+                            //console.log(res);
+                            this.posts[i].userName = res;
+                            //console.log(this.posts[i].userName);
+                        });
                 }
             }
+        }
+    }
+
+    onNameClick(id: number){
+        console.log('onNameClick: '+id);
+        if (id){
+            this.dataService.getUser(id)
+                .subscribe(res=> {
+                    console.log(res);
+                });
         }
     }
 

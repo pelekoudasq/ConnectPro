@@ -29,7 +29,6 @@ export class SearchComponent implements OnInit {
         //console.log('SEARCH CLICKED!');
         localStorage.setItem('searchItem', JSON.stringify(this.search));
         //this.router.navigate(['login/search']);
-        //
         this.ngOnInit();
     }
 
