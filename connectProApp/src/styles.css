@@ -132,7 +132,9 @@ html, body{
     padding: 0;
     border: none;
     background: none;
-    font-size: 17px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: inherit;
     text-align: left;
 }
 
