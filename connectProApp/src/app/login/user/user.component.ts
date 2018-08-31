@@ -24,7 +24,7 @@ export class UserComponent implements OnInit {
             this.router.navigate(['']);
         }
         localStorage.removeItem('searchItem');
-        
+
     }
 
     onSearchClick(){
@@ -47,6 +47,16 @@ export class UserComponent implements OnInit {
             this.dataService.getUserObj(this.userIdToRequest)
                 .subscribe(res=> {
                     this.user = res;
+                });
+        }
+    }
+
+    onConnectClick(){
+        if(this.user._id){
+            this.dataService.requestConnection(this.currentUser._id, this.user._id)
+                .subscribe(res=> {
+                    console.log(res);
+                    this.ngOnInit();
                 });
         }
     }

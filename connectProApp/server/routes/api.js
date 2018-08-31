@@ -131,10 +131,8 @@ router.post('/register', function(req, res, next){
             db.Users.save({firstName: user.firstName, lastName: user.lastName, email: user.email, password: user.password, userType: user.userType});
             db.Users.findOne({ email: user.email }, function(err, newUser){
                 if(err){
-                    console.log('FUCK');
                     return;
                 }
-                console.log('wtf');
                 db.Connections.save({ userId: newUser._id });
             });
         }
@@ -148,6 +146,26 @@ router.post('/newPost', function(req, res, next){
     var postParam = req.body;
     const post = new Post(postParam);
     db.Posts.save(post);
+});
+
+router.post('/request', function(req, res, next){
+    console.log('api: post request');
+    var userAsking = req.body.userAsking;
+    var userAsked = req.body.userAsked;
+    db.Users.findOne({ _id: userAsked }, function(err, user){
+        if (err){
+            return;
+        }
+        db.Connections.findAndModify({
+            query: {userId: userAsked},
+            update: {$push: { requests: userAsking}}
+        }, function(err,user){
+            if(err){
+                return;
+            }
+            console.log('ADDED TO REQUESTS');
+        });
+    });
 });
 
 module.exports = {

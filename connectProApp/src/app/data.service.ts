@@ -80,4 +80,8 @@ export class DataService {
     addPost(post: Post) {
         return this.http.post("http://localhost:3000/api/newPost/", post);
     }
+
+    requestConnection(userAsking: string, userAsked: string) {
+        return this.http.post<any>("http://localhost:3000/api/request", {userAsking: userAsking, userAsked: userAsked});
+    }
 }
