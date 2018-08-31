@@ -24,11 +24,7 @@ export class UserComponent implements OnInit {
             this.router.navigate(['']);
         }
         localStorage.removeItem('searchItem');
-        this.userIdToRequest = this.route.snapshot.params.id;
-        //console.log(this.userIdToRequest);
-        if (this.userIdToRequest == this.currentUser._id) {
-            this.router.navigate(['login/profile']);
-        }
+        
     }
 
     onSearchClick(){
@@ -38,10 +34,14 @@ export class UserComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.userIdToRequest = this.route.snapshot.params.id;
+        //console.log(this.userIdToRequest);
+        if (this.userIdToRequest == this.currentUser._id) {
+            this.router.navigate(['login/profile']);
+        }
+
         this.dataReady = false;
         this.search = '';
-
-
 
        if (this.userIdToRequest){
             this.dataService.getUserObj(this.userIdToRequest)
