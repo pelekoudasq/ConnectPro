@@ -138,3 +138,8 @@ html, body{
     text-align: left;
 }
 
+.name:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
