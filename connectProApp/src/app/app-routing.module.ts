@@ -10,6 +10,7 @@ import { JobsComponent } from './login/jobs/jobs.component';
 import { MessagingComponent } from './login/messaging/messaging.component';
 import { NotificationsComponent } from './login/notifications/notifications.component';
 import { SearchComponent } from './login/search/search.component';
+import { UserComponent } from './login/user/user.component';
 
 
 
@@ -23,7 +24,8 @@ const routes: Routes = [
     { path: 'login/jobs', component: JobsComponent, data:{requiresLogin: true} },
     { path: 'login/messaging', component: MessagingComponent, data:{requiresLogin: true} },
     { path: 'login/notifications', component: NotificationsComponent, data:{requiresLogin: true} },
-    { path: 'login/search', component: SearchComponent, data:{requiresLogin: true} }
+    { path: 'login/search', component: SearchComponent, data:{requiresLogin: true} },
+    { path: 'login/user/:id', component: UserComponent, data:{requiresLogin: true} }
 ];
 
 @NgModule({

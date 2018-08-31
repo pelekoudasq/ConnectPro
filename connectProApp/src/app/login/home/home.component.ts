@@ -82,13 +82,10 @@ export class HomeComponent implements OnInit {
         }
     }
 
-    onNameClick(id: number){
+    onNameClick(id: string){
         console.log('onNameClick: '+id);
         if (id){
-            this.dataService.getUser(id)
-                .subscribe(res=> {
-                    console.log(res);
-                });
+            this.router.navigate(['login/user', id]);
         }
     }
 

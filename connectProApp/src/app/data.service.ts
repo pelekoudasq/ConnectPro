@@ -62,6 +62,17 @@ export class DataService {
             }));
     }
 
+    getUserObj(id: string) {
+        return this.http.get<any>("http://localhost:3000/api/user/"+id)
+            /*.pipe(map(userRes => {
+                if (userRes) {
+                    //console.log('dataService: here');
+                    //console.log(userRes.firstName+' '+userRes.lastName);
+                }
+                return (userRes.firstName+' '+userRes.lastName);
+            }))*/;
+    }
+
     registerUser(user: User) {
         return this.http.post("http://localhost:3000/api/register", user);
     }

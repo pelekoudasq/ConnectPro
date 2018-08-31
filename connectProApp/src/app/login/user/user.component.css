@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    padding: 0;
+    background-color: #353961;
+}
+
+/*////////////////////////////////////////////////////*/
+
+div {
+    margin: 50px 20px;
+}
+
+.rest {
+    position: absolute;
+    background-color: rgba(214, 222, 241, 0.7);
+    border: 1px solid #353961;
+    padding: 10px;
+    left: 8%;
+    width: 80%;
+    height: 100%;
+    top: 4%;
+}
+
+.profile-pic {
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+    border-radius: 50%;
+    border: 1px solid #353961;
+}
+
+.info {
+    text-align: center;
+}

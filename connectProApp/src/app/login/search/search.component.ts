@@ -54,6 +54,13 @@ export class SearchComponent implements OnInit {
         this.users = [];
     }
 
+    onNameClick(id: string){
+        console.log('onNameClick: '+id);
+        if (id){
+            this.router.navigate(['login/user', id]);
+        }
+    }
+
 
 
 }

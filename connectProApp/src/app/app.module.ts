@@ -18,6 +18,7 @@ import { MessagingComponent } from './login/messaging/messaging.component';
 import { NotificationsComponent } from './login/notifications/notifications.component';
 import { AdminComponent } from './admin/admin.component';
 import { SearchComponent } from './login/search/search.component';
+import { UserComponent } from './login/user/user.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SearchComponent } from './login/search/search.component';
     MessagingComponent,
     NotificationsComponent,
     AdminComponent,
-    SearchComponent
+    SearchComponent,
+    UserComponent
   ],
   imports: [
     HttpClientModule,
