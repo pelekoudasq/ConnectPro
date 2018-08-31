@@ -106,7 +106,7 @@ div {
 }
 
 
-.rest input, .rest button{
+.user-post input, .user-post button{
     font-size: 15px;
     height: 30px;
     border: 1px solid #ccc;
@@ -116,12 +116,12 @@ div {
     
 }
 
-.rest button:hover {
+.user-post button:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
-.rest button {
+.user-post button {
     color: rgba(214, 222, 241, 0.7);
     left: 40%;
     width:15%;
