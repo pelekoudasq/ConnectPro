@@ -41,3 +41,28 @@ div {
 .info {
     text-align: center;
 }
+
+#connect {
+    font-size: 15px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-bottom-color: #999;
+    position: relative;
+
+    color: rgba(214, 222, 241, 0.7);
+    width:10%;
+    margin-top: 10px;
+    background-color: #353961;
+}
+
+#connect:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    background-color: #353961;
+}
+
+#connect:disabled {
+    background-color: #353961;
+    opacity: 0.7;
+    cursor: initial;
+}

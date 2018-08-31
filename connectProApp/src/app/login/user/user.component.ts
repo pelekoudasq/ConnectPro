@@ -16,6 +16,7 @@ export class UserComponent implements OnInit {
     dataReady: boolean;
     search: string;
     user: User;
+    requested: boolean=false;
 
 
     constructor(private router: Router, private dataService: DataService, private route: ActivatedRoute) {
@@ -52,6 +53,7 @@ export class UserComponent implements OnInit {
     }
 
     onConnectClick(){
+        this.requested = true;
         if(this.user._id){
             this.dataService.requestConnection(this.currentUser._id, this.user._id)
                 .subscribe(res=> {
