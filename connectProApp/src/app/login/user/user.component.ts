@@ -59,7 +59,10 @@ export class UserComponent implements OnInit {
                     data => {
                         console.log('requested' + data);
                         this.requested = true;
-                        document.getElementById("connect").value = "Requested";
+                        (document.getElementById("connect") as HTMLInputElement).value = "Requested";
+                    },
+                    error => {
+                        this.requested = false;
                     }
                 );
         }

@@ -82,14 +82,14 @@ export class DataService {
     }
 
     checkRequested(userAsking: string, userAsked: string){
-        return this.http.get<any>("http://localhost:3000/api/checkRequested/", {userAsking: userAsking, userAsked: userAsked});
-        .pipe(map(userRes => {
-            if (userRes) {
-                console.log('dataService: here');
-                console.log(userRes);
-            }
-            return (userRes);
-        }));
+        return this.http.post<any>("http://localhost:3000/api/checkRequested/", {userAsking: userAsking, userAsked: userAsked})
+            .pipe(map(userRes => {
+                if (userRes) {
+                    console.log('dataService: here');
+                    console.log(userRes);
+                }
+                return (userRes);
+            }));
     }
 
     requestConnection(userAsking: string, userAsked: string) {

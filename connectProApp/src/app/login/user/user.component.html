@@ -24,7 +24,7 @@
       <img class="profile-pic" src="https://www.weact.org/wp-content/uploads/2016/10/Blank-profile.png" alt="profile picture">
       <h3>{{user?.firstName}} {{user?.lastName}}</h3>
       <p>email: {{user?.email}}</p>
-      <input type="submit" value="Connect" id="connect" (click)="onConnectClick()" [disabled]="requested">
+      <input  id="connect" type="submit" value="Connect"(click)="onConnectClick()" [disabled]="requested">
     </div>
 
     <br>

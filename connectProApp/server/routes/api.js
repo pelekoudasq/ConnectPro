@@ -149,8 +149,8 @@ router.post('/newPost', function(req, res, next){
     db.Posts.save(post);
 });
 
-router.get('/checkRequested', function(req, res, next){
-    console.log('api: get checkRequested');
+router.post('/checkRequested', function(req, res, next){
+    console.log('api: post checkRequested');
     var userAsking = req.body.userAsking;
     var userAsked = req.body.userAsked;
     db.Connections.find({ userId: userAsked, requests: { $in: [userAsking] } }, function(err, id){
